@@ -1,22 +1,33 @@
 package com.je_chen.droidrat_je.appsinfo.checkpermission;
 
+import android.app.Activity;
 import android.content.pm.PackageManager;
+
+import androidx.core.app.ActivityCompat;
 
 import java.util.List;
 
 public class PermissionsCheck {
-    private PackageManager packageManager;
-    private String TAG = "DroidRat_JE";
+    private final PackageManager packageManager;
+    private final String TAG = "DroidRat_JE";
 
-    public PermissionsCheck(PackageManager packageManager){
-        this.packageManager=packageManager;
+    public PermissionsCheck(PackageManager packageManager) {
+        this.packageManager = packageManager;
     }
 
-    public int check(String permissionname,String packagename){
-       return this.packageManager.checkPermission(permissionname,packagename);
+    public void checkPermission(Activity activity, String[] permission) {
+        ActivityCompat.requestPermissions(activity, permission, 0);
     }
 
-    public List getPermissionGroup(){
+    public void checkPermission(Activity activity, String permission) {
+        ActivityCompat.requestPermissions(activity, new String[]{permission}, 0);
+    }
+
+    public int check(String permissionname, String packagename) {
+        return this.packageManager.checkPermission(permissionname, packagename);
+    }
+
+    public List getPermissionGroup() {
         List permissionList = packageManager.getAllPermissionGroups(0);
         return permissionList;
     }
