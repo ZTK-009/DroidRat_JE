@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
         Intent launchApp = getPackageManager().getLaunchIntentForPackage("com.je_chen.je_ocr");
         startActivity(launchApp);
          */
-        List permissionList = getPackageManager().getAllPermissionGroups(0);
-        for(Object permissions : permissionList)
-            Log.e(TAG, String.valueOf(permissions));
+
     }
 }
