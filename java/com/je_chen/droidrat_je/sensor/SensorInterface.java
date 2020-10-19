@@ -4,4 +4,5 @@ public interface SensorInterface<T>{
 
     public T returnValue();
 
+    public boolean canUse();
 }

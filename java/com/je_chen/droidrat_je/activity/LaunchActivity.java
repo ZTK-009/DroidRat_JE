@@ -3,6 +3,8 @@ package com.je_chen.droidrat_je.activity;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -20,11 +22,14 @@ import com.je_chen.droidrat_je.appsinfo.checkpermission.PermissionsCheck;
 import com.je_chen.droidrat_je.sms.SMS;
 import com.je_chen.droidrat_je.vibrator.VibratorSystem;
 
+import java.util.List;
+
 public class LaunchActivity extends AppCompatActivity implements View.OnClickListener {
 
     final String TAG = "JE-TAG";
 
     PackageManager packageManager;
+    SensorManager sensorManager;
 
     Call call;
 
@@ -37,7 +42,6 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
     VibratorSystem vibratorSystem;
 
     PermissionsCheck permissionsCheck;
-
 
     Button testButton;
 
@@ -66,6 +70,7 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
         };
 
         packageManager = getPackageManager();
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
         call = new Call();
         web = new Web();
