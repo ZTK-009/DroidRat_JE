@@ -1,33 +1,28 @@
 package com.je_chen.droidrat_je.activity;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.common.api.GoogleApi;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationRequest;
 import com.je_chen.droidrat_je.R;
 import com.je_chen.droidrat_je.appintent.call.Call;
 import com.je_chen.droidrat_je.appintent.mail.SendMail;
 import com.je_chen.droidrat_je.appintent.web.Web;
 import com.je_chen.droidrat_je.appsinfo.checkpermission.PermissionsCheck;
 import com.je_chen.droidrat_je.sms.SMS;
+import com.je_chen.droidrat_je.vibrator.VibratorSystem;
 
 public class LaunchActivity extends AppCompatActivity implements View.OnClickListener {
 
     final String TAG = "JE-TAG";
-
-    private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
-    private GoogleApi googleApi;
-    private LocationRequest locationRequest;
-    private double currentLatitude;
-    private double currentLongitude;
 
     PackageManager packageManager;
 
@@ -38,6 +33,8 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
     SendMail sendMail;
 
     SMS sms;
+
+    VibratorSystem vibratorSystem;
 
     PermissionsCheck permissionsCheck;
 
@@ -62,7 +59,11 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
                 //SMS
                 Manifest.permission.RECEIVE_SMS,
                 Manifest.permission.SEND_SMS,
-                Manifest.permission.READ_SMS};
+                Manifest.permission.READ_SMS,
+
+                //震動
+                Manifest.permission.VIBRATE
+        };
 
         packageManager = getPackageManager();
 
@@ -70,6 +71,7 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
         web = new Web();
         sendMail = new SendMail();
         sms = new SMS();
+        vibratorSystem = new VibratorSystem(this);
 
         permissionsCheck = new PermissionsCheck(packageManager);
 
@@ -101,7 +103,6 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.testButton:
-                sms.getAllSms(this);
                 break;
         }
     }
