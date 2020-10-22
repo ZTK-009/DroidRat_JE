@@ -9,6 +9,7 @@
     <!-- 取得位置 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
 
     <!-- 取得SMS -->
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
@@ -17,6 +18,9 @@
 
     <!-- 震動 -->
     <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <!-- 網路 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application

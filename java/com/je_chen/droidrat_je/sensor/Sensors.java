@@ -43,4 +43,56 @@ public class Sensors {
         return sensorManager.getSensorList(Sensor.TYPE_ALL);
     }
 
+    public AccelerometerSensor getAccelerometerSensor() {
+        return accelerometerSensor;
+    }
+
+    public AmbientTemperatureSensor getAmbientTemperatureSensor() {
+        return ambientTemperatureSensor;
+    }
+
+    public GravitySensor getGravitySensor() {
+        return gravitySensor;
+    }
+
+    public GyroscopeSensor getGyroscopeSensor() {
+        return gyroscopeSensor;
+    }
+
+    public LightSensor getLightSensor() {
+        return lightSensor;
+    }
+
+    public LinearAcceleRationSensor getLinearAcceleRationSensor() {
+        return linearAcceleRationSensor;
+    }
+
+    public MagneticFieldSensor getMagneticFieldSensor() {
+        return magneticFieldSensor;
+    }
+
+    public OrientationSensor getOrientationSensor() {
+        return orientationSensor;
+    }
+
+    public PressureSensor getPressureSensor() {
+        return pressureSensor;
+    }
+
+    public ProximitySensor getProximitySensor() {
+        return proximitySensor;
+    }
+
+    public RelativeHumditySensor getRelativeHumditySensor() {
+        return relativeHumditySensor;
+    }
+
+    public RotationVectorSensor getRotationVectorSensor() {
+        return rotationVectorSensor;
+    }
+
+    public TemperatureSensor getTemperatureSensor() {
+        return temperatureSensor;
+    }
+
 }
