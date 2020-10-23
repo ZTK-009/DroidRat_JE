@@ -25,10 +25,6 @@ public class PermissionsCheck {
         ActivityCompat.requestPermissions(activity, new String[]{permission}, 0);
     }
 
-    public int check(String permissionname, String packagename) {
-        return this.packageManager.checkPermission(permissionname, packagename);
-    }
-
     public List getPermissionGroup() {
         List permissionList = packageManager.getAllPermissionGroups(0);
         return permissionList;

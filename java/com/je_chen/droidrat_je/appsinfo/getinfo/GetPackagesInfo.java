@@ -6,6 +6,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ public class GetPackagesInfo {
         this.packageManager=packageManager;
     }
 
+    // 取得info
     public List<ResolveInfo> getResolveInfo(){
         Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
         mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
@@ -26,6 +28,7 @@ public class GetPackagesInfo {
         return packageAppsList;
     }
 
+    //取得所有安裝非系統的APP 名字
     public List getInstalledPackages() {
         List<String> installedApps = new ArrayList<>();
         @SuppressLint("QueryPermissionsNeeded")
@@ -40,8 +43,24 @@ public class GetPackagesInfo {
         return installedApps;
     }
 
+    public int checkAnotherPermission(String permissionName, String packageName) {
+        return this.packageManager.checkPermission(permissionName, packageName);
+    }
+
+    public int checkAnotherSignature(int uid1, int uid2) {
+        return this.packageManager.checkSignatures(uid1, uid2);
+    }
+
     public String getPackageInfo(String packageName) throws PackageManager.NameNotFoundException {
         return String.valueOf(packageManager.getPackageInfo(packageName,PackageManager.GET_PERMISSIONS));
+    }
+
+    public Drawable getApplicationIcon(String packageName) throws PackageManager.NameNotFoundException {
+        return packageManager.getApplicationIcon(packageName);
+    }
+
+    public ApplicationInfo getApplicationInfo(String packageName, int flag) throws PackageManager.NameNotFoundException {
+        return packageManager.getApplicationInfo(packageName,flag);
     }
 
 }

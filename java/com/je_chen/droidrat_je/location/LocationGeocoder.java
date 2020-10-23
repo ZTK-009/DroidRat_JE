@@ -9,17 +9,33 @@ import java.util.List;
 import java.util.Locale;
 
 public class LocationGeocoder {
-    //TODO Geocoder
     private Geocoder geocoder;
 
     public LocationGeocoder(Context context){
         Locale locale = Locale.getDefault();
         this.geocoder = new Geocoder(context,locale);
     }
-    // getAddressLine
-    public List<Address> getAddressList(double latitude,double longitude,int dataCount) throws IOException {
+
+    private List<Address> getAddressList(double latitude,double longitude,int dataCount) throws IOException {
         return this.geocoder.getFromLocation(latitude,longitude,dataCount);
     }
 
+    public String getAddressLine(double latitude, double longitude, int dataCount) throws IOException {
+        StringBuilder addressString = new StringBuilder();
+        List<Address> addressList = getAddressList(latitude,longitude,dataCount);
+        if(addressList == null || addressList.size() == 0)
+            return "無法取得";
+        Address address = addressList.get(0);
+        for(int i =0; i<address.getMaxAddressLineIndex();i++)
+            addressString.append(address.getAddressLine(i)).append("\n");
+        return addressString.toString();
+    }
+
+    public Address getAddress(double latitude, double longitude, int dataCount) throws IOException {
+        List<Address> addressList = getAddressList(latitude,longitude,dataCount);
+        if(addressList == null || addressList.size() == 0)
+            return null;
+        return addressList.get(0);
+    }
 
 }
