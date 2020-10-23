@@ -5,6 +5,10 @@ import android.hardware.SensorManager;
 
 import java.util.List;
 
+/**
+ * TODO Sensors
+ */
+
 public class Sensors {
 
     private SensorManager sensorManager;

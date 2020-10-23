@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 public class LocationSystem implements LocationListener {
 
     private LocationManager locationManager;
-    private String Provider;
+    private String provider;
 
     private double altitude, latitude, longitude, speed;
 
@@ -24,8 +24,9 @@ public class LocationSystem implements LocationListener {
         this.type = type;
         this.sec = sec;
         this.meter = meter;
-        Provider = locationManager.getBestProvider(new Criteria(), true);
-        locationManager.requestLocationUpdates(type, sec, meter, this);
+        provider = locationManager.getBestProvider(new Criteria(), true);
+        if(provider != null)
+            locationManager.requestLocationUpdates(type, sec, meter, this);
     }
 
 
@@ -40,7 +41,8 @@ public class LocationSystem implements LocationListener {
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
-        locationManager.removeUpdates(this);
+        if(provider != null)
+            locationManager.removeUpdates(this);
     }
 
     @SuppressLint("MissingPermission")
@@ -52,6 +54,14 @@ public class LocationSystem implements LocationListener {
                 return locationManager.getLastKnownLocation("network");
         }
         return locationManager.getLastKnownLocation("gps");
+    }
+
+    public boolean canUse(){
+        return this.provider == null;
+    }
+
+    public String getProvider() {
+        return provider;
     }
 
     public double getAltitude() {

