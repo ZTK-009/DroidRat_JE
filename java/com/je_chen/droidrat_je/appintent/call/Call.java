@@ -6,9 +6,8 @@ import android.net.Uri;
 
 public class Call {
 
-    public void call(Context context,String uri){
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:+"+uri));
+    public void call(Context context,String phoneNumber){
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+phoneNumber));
         context.startActivity(intent);
     }
-
 }

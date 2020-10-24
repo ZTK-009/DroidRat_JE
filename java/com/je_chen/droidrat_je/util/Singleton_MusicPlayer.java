@@ -1,4 +1,4 @@
-package com.je_chen.justdrawitjedition;
+package com.je_chen.droidrat_je.util;
 
 import android.content.Context;
 import android.media.MediaPlayer;

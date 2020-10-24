@@ -27,7 +27,8 @@ public class Sensors {
     private RotationVectorSensor rotationVectorSensor;
     private TemperatureSensor temperatureSensor;
 
-    public Sensors(){
+    public Sensors(SensorManager sensorManager){
+        this.sensorManager = sensorManager;
         this.accelerometerSensor = new AccelerometerSensor(sensorManager);
         this.ambientTemperatureSensor = new AmbientTemperatureSensor(sensorManager);
         this.gravitySensor = new GravitySensor(sensorManager);
