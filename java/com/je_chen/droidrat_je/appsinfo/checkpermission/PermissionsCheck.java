@@ -1,12 +1,10 @@
 package com.je_chen.droidrat_je.appsinfo.checkpermission;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.pm.PackageManager;
 
 import androidx.core.app.ActivityCompat;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class PermissionsCheck {
@@ -26,8 +24,7 @@ public class PermissionsCheck {
     }
 
     public List getPermissionGroup() {
-        List permissionList = packageManager.getAllPermissionGroups(0);
-        return permissionList;
+        return packageManager.getAllPermissionGroups(0);
     }
 
 }
