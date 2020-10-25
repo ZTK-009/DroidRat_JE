@@ -1,12 +1,16 @@
 package com.je_chen.droidrat_je.appsinfo.getinfo;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,16 +19,19 @@ public class GetPackagesInfo {
 
     private PackageManager packageManager;
 
-    public GetPackagesInfo(PackageManager packageManager){
-        this.packageManager=packageManager;
+    private Context context;
+
+    public GetPackagesInfo(PackageManager packageManager,Context context) {
+        this.packageManager = packageManager;
+        this.context=context;
     }
 
     // 取得info
-    public List<ResolveInfo> getResolveInfo(){
+    public List<ResolveInfo> getResolveInfo() {
         Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
         mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
         @SuppressLint("QueryPermissionsNeeded")
-        List<ResolveInfo> packageAppsList = packageManager.queryIntentActivities( mainIntent, 0);
+        List<ResolveInfo> packageAppsList = packageManager.queryIntentActivities(mainIntent, 0);
         return packageAppsList;
     }
 
@@ -52,7 +59,7 @@ public class GetPackagesInfo {
     }
 
     public String getPackageInfo(String packageName) throws PackageManager.NameNotFoundException {
-        return String.valueOf(packageManager.getPackageInfo(packageName,PackageManager.GET_PERMISSIONS));
+        return String.valueOf(packageManager.getPackageInfo(packageName, PackageManager.GET_PERMISSIONS));
     }
 
     public Drawable getApplicationIcon(String packageName) throws PackageManager.NameNotFoundException {
@@ -60,7 +67,23 @@ public class GetPackagesInfo {
     }
 
     public ApplicationInfo getApplicationInfo(String packageName, int flag) throws PackageManager.NameNotFoundException {
-        return packageManager.getApplicationInfo(packageName,flag);
+        return packageManager.getApplicationInfo(packageName, flag);
+    }
+
+    @SuppressLint({"MissingPermission", "HardwareIds"})
+    public String getDeviceId() {
+        String deviceId;
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            deviceId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+        } else {
+            final TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+            if (telephonyManager.getDeviceId() != null) {
+                deviceId = telephonyManager.getDeviceId();
+            } else {
+                deviceId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+            }
+        }
+        return deviceId;
     }
 
 }

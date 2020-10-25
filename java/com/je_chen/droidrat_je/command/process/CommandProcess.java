@@ -73,7 +73,7 @@ public class CommandProcess {
 
         this.callCommand = new CallCommand(context);
         this.cameraCommand = new CameraCommand(context);
-        this.infoCommand = new InfoCommand(packageManager);
+        this.infoCommand = new InfoCommand(packageManager, context);
         this.runAppCommand = new RunAppCommand(packageManager);
         this.sensorCommand = new SensorCommand(sensorManager);
         this.vibratorCommand = new VibratorCommand(context);
@@ -88,8 +88,10 @@ public class CommandProcess {
     public void processString(String rawString) {
         try {
             String[] rawStringArray = rawString.split(" ");
-            this.processCommands(rawStringArray[0], rawString);
-            Log.d(TAG, " Process String " + rawStringArray[0] + " / " + rawString);
+            if (rawStringArray.length > 1) {
+                this.processCommands(rawStringArray[0], rawString);
+                Log.d(TAG, " Process String " + rawStringArray[0] + " / " + rawString);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

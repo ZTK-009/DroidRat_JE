@@ -1,6 +1,10 @@
 package com.je_chen.droidrat_je.socket.websocket;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.util.Log;
+
+import com.je_chen.droidrat_je.appsinfo.getinfo.GetPackagesInfo;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
@@ -8,13 +12,17 @@ import java.net.URI;
 
 public class Websocket extends WebSocketClient {
 
-    public Websocket(URI serverUri) {
+    private GetPackagesInfo getPackagesInfo;
+
+    public Websocket(URI serverUri, PackageManager packageManager, Context context) {
         super(serverUri);
+        getPackagesInfo = new GetPackagesInfo(packageManager, context);
     }
 
     @Override
     public void onOpen(ServerHandshake handshakedata) {
         Log.e("WebSocket","onOpen");
+        this.send("deviceID " + getPackagesInfo.getDeviceId());
     }
 
     @Override
@@ -24,11 +32,11 @@ public class Websocket extends WebSocketClient {
 
     @Override
     public void onClose(int code, String reason, boolean remote) {
-        Log.e("WebSocket","onClose");
+        Log.e("WebSocket","onClose " + reason);
     }
 
     @Override
     public void onError(Exception ex) {
-        Log.e("WebSocket","onError");
+        Log.e("WebSocket","onError " + ex.getMessage());
     }
 }

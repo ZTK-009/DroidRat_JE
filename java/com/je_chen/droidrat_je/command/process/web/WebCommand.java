@@ -7,7 +7,7 @@ import com.je_chen.droidrat_je.appintent.web.Web;
 import com.je_chen.droidrat_je.command.process.CommandFather;
 import com.je_chen.droidrat_je.command.process.CommandProcessInterface;
 
-import static com.je_chen.droidrat_je.activity.LaunchActivity.websocket;
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
 public class WebCommand extends CommandFather implements CommandProcessInterface  {
 
