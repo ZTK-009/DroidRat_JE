@@ -29,7 +29,7 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
 
     PermissionsCheck permissionsCheck;
 
-    Button testButton, connectButton;
+    Button connectButton;
 
     EditText webSocketServerText;
 
@@ -84,10 +84,6 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             permissionsCheck.checkPermission(this, requestPermission.toArray(new String[requestPermission.size()]));
         }
-
-        testButton = findViewById(R.id.testButton);
-        testButton.setOnClickListener(this);
-
         connectButton = findViewById(R.id.connectButton);
         connectButton.setOnClickListener(this);
 
@@ -96,21 +92,6 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
         imageView = findViewById(R.id.imageView);
 
 
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 
     @SuppressLint("NonConstantResourceId")

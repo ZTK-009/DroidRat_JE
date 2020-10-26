@@ -34,16 +34,16 @@ public class WebCommand extends CommandFather implements CommandProcessInterface
             switch (rawCommandArray[1]) {
                 case "WebSearch":
                     String webUri1 = rawCommandArray[2];
-                    Log.d(TAG,"Web search " + webUri1);
+                    Log.d(TAG,"Websearch " + webUri1);
                     web.webSearch(context,webUri1);
-                    this.send("Web search " + webUri1);
+                    this.send("Websearch:" + webUri1);
                     break;
 
                 case "OpenWeb":
                     String webUri2 = rawCommandArray[2];
-                    Log.d(TAG,"Open web " + webUri2);
+                    Log.d(TAG,"Openweb " + webUri2);
                     web.openWeb(context,webUri2);
-                    this.send("Open web " + webUri2);
+                    this.send("Openweb:" + webUri2);
                     break;
             }
         }catch (Exception e){

@@ -75,7 +75,7 @@ public class ProcessCommandService extends Service {
             e.printStackTrace();
         }
         return START_STICKY;
-}
+    }
 
     @Override
     public void onDestroy() {

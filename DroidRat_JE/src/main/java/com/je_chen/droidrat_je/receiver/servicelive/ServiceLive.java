@@ -1,5 +1,6 @@
 package com.je_chen.droidrat_je.receiver.servicelive;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -12,6 +13,7 @@ public class ServiceLive extends BroadcastReceiver {
 
     static String TAG = "BroadcastReciever";
 
+    @SuppressLint("UnsafeProtectedBroadcastReceiver")
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.i(TAG, "Received...");
