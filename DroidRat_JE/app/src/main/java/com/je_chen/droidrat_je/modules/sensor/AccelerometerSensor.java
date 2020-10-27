@@ -20,9 +20,10 @@ public class AccelerometerSensor implements SensorInterface<List<Float>>, Sensor
     public AccelerometerSensor(SensorManager sensorManager) {
         this.sensorManager = sensorManager;
         canUse = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null;
-        if (canUse)
+        if (canUse) {
             sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI);
+            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI);
+        }
     }
 
     @Override
@@ -53,6 +54,7 @@ public class AccelerometerSensor implements SensorInterface<List<Float>>, Sensor
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
+        if(canUse)
         sensorManager.unregisterListener(this);
     }
 }
