@@ -7,10 +7,7 @@ import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
 
 public class SensorCommand extends CommandFather implements CommandProcessInterface {
 
-    private SensorsFather sensors;
-
     public SensorCommand(SensorManager sensorManager){
-        sensors = new SensorsFather(sensorManager);
     }
 
     @Override
