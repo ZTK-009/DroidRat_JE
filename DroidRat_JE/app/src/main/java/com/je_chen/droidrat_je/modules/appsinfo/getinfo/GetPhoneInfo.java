@@ -4,6 +4,9 @@ package com.je_chen.droidrat_je.modules.appsinfo.getinfo;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
+import android.util.Log;
+
+import java.io.InputStream;
 
 public class GetPhoneInfo {
 
@@ -96,8 +99,26 @@ public class GetPhoneInfo {
     }
 
     @SuppressLint("InlinedApi")
-    public String getSecurityVersion(){
+    public String getSecurityVersion() {
         return Build.VERSION.SECURITY_PATCH;
     }
 
+    public String getCPUInfo() {
+        StringBuilder output = new StringBuilder();
+        try {
+            String[] DATA = {"/system/bin/cat", "/proc/cpuinfo"};
+            ProcessBuilder processBuilder = new ProcessBuilder(DATA);
+            Process process = processBuilder.start();
+            InputStream inputStream = process.getInputStream();
+            byte[] byteArry = new byte[1024];
+
+            while (inputStream.read(byteArry) != -1) {
+                output.append(new String(byteArry)).append("-");
+            }
+            inputStream.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return output.toString();
+    }
 }
