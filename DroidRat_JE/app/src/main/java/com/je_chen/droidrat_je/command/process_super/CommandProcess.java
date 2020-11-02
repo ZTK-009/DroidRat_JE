@@ -62,10 +62,11 @@ public class CommandProcess {
 
 
     private CommandProcess() {
+        Log.v(TAG,"CommandProcess init");
         this.commandFather = new CommandFather();
         this.mailCommand = new MailCommand();
         this.playCommand = new PlayCommand();
-        this.smsCommand = new SMSCommand();
+
     }
 
     public CommandProcess(Context context, PackageManager packageManager, SensorManager sensorManager, LocationManager locationManager, String type, int sec, int meter) {
@@ -80,6 +81,7 @@ public class CommandProcess {
         this.infoCommand = new InfoCommand(packageManager, context);
         this.runAppCommand = new RunAppCommand(packageManager);
         this.sensorCommand = new SensorCommand(sensorManager);
+        this.smsCommand = new SMSCommand(context);
         this.toastCommand = new ToastCommand(context);
         this.vibratorCommand = new VibratorCommand(context);
         this.webCommand = new WebCommand(context);
@@ -95,7 +97,7 @@ public class CommandProcess {
             String[] rawStringArray = rawString.split(" ");
             if (rawStringArray.length > 1) {
                 this.processCommands(rawStringArray[0], rawString);
-                Log.d(TAG, " Process String " + rawStringArray[0] + " / " + rawString);
+                Log.d(TAG, " Process String:" + rawStringArray[0] + "/" + rawString);
             }
         } catch (Exception e) {
             e.printStackTrace();

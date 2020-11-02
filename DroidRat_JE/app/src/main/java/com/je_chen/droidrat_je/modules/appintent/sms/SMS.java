@@ -7,11 +7,14 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.Telephony;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class SMS {
 
-    public void getAllSms(Context context) {
+    public List<String> getAllSms(Context context) {
+        List<String> smsList = new ArrayList<>();
         ContentResolver cr = context.getContentResolver();
         Cursor cursor = cr.query(Telephony.Sms.CONTENT_URI, null, null, null, null);
         int totalSMS = 0;
@@ -37,19 +40,21 @@ public class SMS {
                         default:
                             break;
                     }
-                    System.out.println(smsDate);
-                    System.out.println(number);
-                    System.out.println(body);
+                    smsList.add(smsDate+":");
+                    smsList.add(number+":");
+                    smsList.add(body+":");
                     cursor.moveToNext();
                 }
             }
             cursor.close();
         }
+        return smsList;
     }
 
     public void sendSMS(Context context,String mobileNumber,String smsText){
         Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:"+ mobileNumber));
         intent.putExtra("sms_body", smsText);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 }

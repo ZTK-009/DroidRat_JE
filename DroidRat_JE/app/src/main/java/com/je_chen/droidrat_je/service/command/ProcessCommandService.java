@@ -30,6 +30,8 @@ public class ProcessCommandService extends Service {
 
     SensorManager sensorManager;
 
+    BroadcastReceiver broadcastReceiver;
+
     CommandProcess commandProcess;
 
     @Nullable
@@ -43,12 +45,16 @@ public class ProcessCommandService extends Service {
     public void onCreate() {
         super.onCreate();
         Log.v(TAG, "onCreate");
-        BroadcastReceiver broadcastReceiver = new ServiceLive();
-        IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-        intentFilter.addAction(Intent.ACTION_BOOT_COMPLETED);
-        intentFilter.addAction(Intent.ACTION_SCREEN_ON);
-        intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        this.registerReceiver(broadcastReceiver,intentFilter);
+        try {
+            broadcastReceiver = new ServiceLive();
+            IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+            intentFilter.addAction(Intent.ACTION_BOOT_COMPLETED);
+            intentFilter.addAction(Intent.ACTION_SCREEN_ON);
+            intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
+            this.registerReceiver(broadcastReceiver, intentFilter);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -57,7 +63,7 @@ public class ProcessCommandService extends Service {
             String serverURI = null;
 
             if (intent == null)
-                return START_REDELIVER_INTENT;
+                return START_STICKY;
 
             if (intent.hasExtra("URI")) {
                 serverURI = intent.getStringExtra("URI");
@@ -76,20 +82,27 @@ public class ProcessCommandService extends Service {
                 websocket = new Websocket(uri, packageManager, this) {
                     @Override
                     public void onMessage(String message) {
+                        Log.v(TAG, "Receiver : " + message);
                         commandProcess.processString(message);
                     }
                 };
             }
-            websocket.connect();
+            if (!websocket.isOpen())
+                websocket.connect();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return START_REDELIVER_INTENT;
+        return START_STICKY;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         Log.v(TAG, "onDestroy");
+        try {
+            this.unregisterReceiver(broadcastReceiver);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

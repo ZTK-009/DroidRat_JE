@@ -9,6 +9,7 @@ public class Setting {
 
     public void toPackageSetting(Context context,String packageName){
         Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         Uri uri = Uri.fromParts("package", packageName, null);
         intent.setData(uri);
         context.startActivity(intent);

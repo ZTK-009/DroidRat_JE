@@ -15,7 +15,7 @@ import static com.je_chen.droidrat_je.service.command.ProcessCommandService.webs
 
 public class ToastCommand extends CommandFather implements CommandProcessInterface {
 
-    private final String TAG = "Call Event ";
+    private final String TAG = "Toast Event ";
 
     private Toastmaker toastmaker;
 
