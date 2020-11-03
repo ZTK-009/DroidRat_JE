@@ -13,13 +13,21 @@ public class Main {
 
     static CommandProcess commandProcess;
 
+    static String applicationName = "" +
+            "██████╗ ██████╗  ██████╗ ██╗██████╗ ██████╗  █████╗ ████████╗             ██╗███████╗\n" +
+            "██╔══██╗██╔══██╗██╔═══██╗██║██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝             ██║██╔════╝\n" +
+            "██║  ██║██████╔╝██║   ██║██║██║  ██║██████╔╝███████║   ██║                ██║█████╗  \n" +
+            "██║  ██║██╔══██╗██║   ██║██║██║  ██║██╔══██╗██╔══██║   ██║           ██   ██║██╔══╝  \n" +
+            "██████╔╝██║  ██║╚██████╔╝██║██████╔╝██║  ██║██║  ██║   ██║  ███████╗╚█████╔╝███████╗";
+
     public static void main(String[] argv) {
         commandProcess = new CommandProcess();
+        System.out.println(applicationName);
         Run();
     }
 
     public static void Run() {
-        Server server = new Server("localhost", 5050, "/websocket", null, WebSocketServerEndPoint.class);
+        Server server = new Server("localhost", 5050, "", null, WebSocketServerEndPoint.class);
         String Control_String;
         try {
             server.start();

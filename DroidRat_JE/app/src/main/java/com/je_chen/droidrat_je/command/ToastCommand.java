@@ -38,17 +38,17 @@ public class ToastCommand extends CommandFather implements CommandProcessInterfa
             switch (rawCommandArray[1]) {
                 case "ToastN":
                     String message = rawCommandArray[2];
-                    Log.d(TAG, "Toast maker:" + message);
+                    Log.d(TAG, "ToastN:" + message);
                     toastmaker.makeToast(message);
-                    this.send("Toast maker:" + message);
+                    this.send("ToastN:" + message);
                     break;
 
                 case "ToastD":
                     String message1 = rawCommandArray[2];
                     String direction1 = rawCommandArray[3];
-                    Log.d(TAG, "Toast maker:" + message1 + " Direction:" + direction1);
+                    Log.d(TAG, "ToastD:" + message1 + " Direction:" + direction1);
                     toastmaker.makeToast(message1,direction1);
-                    this.send("Toast maker:" + message1 + " Direction:" + direction1);
+                    this.send("ToastD:" + message1 + " Direction:" + direction1);
                     break;
             }
         } catch (Exception e) {

@@ -12,8 +12,9 @@ public class CommandProcess {
 
     public void processCommand(String rawString) {
         try {
+            System.out.println("Process Command : " + rawString);
             String[] rawStringArray = rawString.split("!");
-            switch (rawStringArray[0]){
+            switch (rawStringArray[0]) {
 
                 case "send":
                     webSocketServerEndPoint.sendText(rawStringArray[1]);

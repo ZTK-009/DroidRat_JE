@@ -14,13 +14,11 @@ public class ServiceLive extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.i(TAG, "Received...");
+        Log.i(TAG, "Received: " + intent.getAction());
 
-        if(isServiceRunning(context)) {
+        if (isServiceRunning(context)) {
             Log.v(TAG, "Running");
-        }
-
-        else {
+        } else {
             Log.v(TAG, "Not running restart");
             Intent restart = new Intent(context, ProcessCommandService.class);
             context.startService(restart);

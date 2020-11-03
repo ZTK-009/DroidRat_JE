@@ -60,22 +60,14 @@ public class CommandProcess {
 
     private WebCommand webCommand;
 
-
-    private CommandProcess() {
-        Log.v(TAG,"CommandProcess init");
-        this.commandFather = new CommandFather();
-        this.mailCommand = new MailCommand();
-        this.playCommand = new PlayCommand();
-
-    }
-
     public CommandProcess(Context context, PackageManager packageManager, SensorManager sensorManager, LocationManager locationManager, String type, int sec, int meter) {
-        this();
-
+        Log.v(TAG, "CommandProcess init");
         this.context = context;
         this.packageManager = packageManager;
         this.sensorManager = sensorManager;
-
+        this.commandFather = new CommandFather();
+        this.mailCommand = new MailCommand();
+        this.playCommand = new PlayCommand();
         this.callCommand = new CallCommand(context);
         this.cameraCommand = new CameraCommand(context);
         this.infoCommand = new InfoCommand(packageManager, context);
@@ -85,11 +77,9 @@ public class CommandProcess {
         this.toastCommand = new ToastCommand(context);
         this.vibratorCommand = new VibratorCommand(context);
         this.webCommand = new WebCommand(context);
-
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             this.locationCommand = new LocationCommand(context, locationManager, type, sec, meter);
         }
-
     }
 
     public void processString(String rawString) {
