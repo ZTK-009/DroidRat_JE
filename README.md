@@ -1,4 +1,4 @@
-### Disclaimer : This software is meant for educational purposes only. I don't feel responsible for any malicious use of the app.
+### Disclaimer : This software is meant for educational purposes only.
 ```
 ██████╗ ██████╗  ██████╗ ██╗██████╗ ██████╗  █████╗ ████████╗             ██╗███████╗
 ██╔══██╗██╔══██╗██╔═══██╗██║██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝             ██║██╔════╝
