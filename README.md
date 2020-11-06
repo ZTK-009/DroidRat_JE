@@ -19,10 +19,11 @@
 * java for android & java for server
 
 * MIT License
-
+#
 #### Use note:
 * Need Android Studio & Android SDK to build apk or using exist apk
 * connect using websocket & tcp socket & udp socket, default is websocket
-
+#
 #### TODO:
 * GUI
+#
