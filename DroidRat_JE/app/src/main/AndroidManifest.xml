@@ -62,7 +62,6 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
                 <action android:name="android.intent.action.BATTERY_CHANGED"/>
             </intent-filter>
-
         </receiver>
 
         <service
