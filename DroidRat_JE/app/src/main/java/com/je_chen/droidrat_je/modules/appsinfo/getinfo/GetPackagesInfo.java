@@ -30,13 +30,14 @@ public class GetPackagesInfo {
     public List<ResolveInfo> getResolveInfo() {
         Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
         mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         @SuppressLint("QueryPermissionsNeeded")
         List<ResolveInfo> packageAppsList = packageManager.queryIntentActivities(mainIntent, 0);
         return packageAppsList;
     }
 
     //取得所有安裝非系統的APP 名字
-    public List getInstalledPackages() {
+    public List<String> getInstalledPackages() {
         List<String> installedApps = new ArrayList<>();
         @SuppressLint("QueryPermissionsNeeded")
         List<PackageInfo> packageAppsList = packageManager.getInstalledPackages(0);
