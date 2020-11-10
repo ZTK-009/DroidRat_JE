@@ -3,11 +3,10 @@ package com.je_chen.droidrat_je.command;
 import android.content.Context;
 
 import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
 
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
-public class CameraCommand extends CommandFather implements CommandProcessInterface {
+public class CameraCommand extends CommandFather{
 
     private Context context;
 

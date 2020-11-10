@@ -6,7 +6,6 @@ import android.content.pm.ResolveInfo;
 import android.util.Log;
 
 import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
 import com.je_chen.droidrat_je.modules.appsinfo.getinfo.GetPackagesInfo;
 import com.je_chen.droidrat_je.modules.appsinfo.getinfo.GetPhoneInfo;
 
@@ -15,7 +14,7 @@ import java.util.List;
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
 
-public class InfoCommand extends CommandFather implements CommandProcessInterface {
+public class InfoCommand extends CommandFather{
 
     private final String TAG = "Info Event ";
 

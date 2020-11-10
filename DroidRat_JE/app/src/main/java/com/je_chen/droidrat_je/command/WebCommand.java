@@ -4,12 +4,11 @@ import android.content.Context;
 import android.util.Log;
 
 import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
 import com.je_chen.droidrat_je.modules.appintent.web.Web;
 
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
-public class WebCommand extends CommandFather implements CommandProcessInterface {
+public class WebCommand extends CommandFather{
 
     private final String TAG = "Web Event ";
 

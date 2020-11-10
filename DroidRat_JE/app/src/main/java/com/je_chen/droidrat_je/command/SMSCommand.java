@@ -5,15 +5,13 @@ import android.content.Context;
 import android.util.Log;
 
 import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
 import com.je_chen.droidrat_je.modules.appintent.sms.SMS;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
-public class SMSCommand extends CommandFather implements CommandProcessInterface {
+public class SMSCommand extends CommandFather{
 
     private final String TAG = "SMS Event ";
 

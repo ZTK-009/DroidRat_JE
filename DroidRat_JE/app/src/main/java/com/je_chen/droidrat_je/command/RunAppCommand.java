@@ -3,12 +3,11 @@ package com.je_chen.droidrat_je.command;
 import android.content.pm.PackageManager;
 
 import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
 import com.je_chen.droidrat_je.modules.appintent.runapp.RunApp;
 
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
-public class RunAppCommand extends CommandFather implements CommandProcessInterface {
+public class RunAppCommand extends CommandFather{
 
     private RunApp runApp;
 

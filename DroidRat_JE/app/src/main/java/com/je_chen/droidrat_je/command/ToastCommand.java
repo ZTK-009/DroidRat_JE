@@ -1,19 +1,15 @@
 package com.je_chen.droidrat_je.command;
 
 import android.content.Context;
-import android.os.Looper;
 import android.util.Log;
 
 import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
 import com.je_chen.droidrat_je.modules.toast.Toastmaker;
-
-import java.util.logging.Handler;
 
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
 
-public class ToastCommand extends CommandFather implements CommandProcessInterface {
+public class ToastCommand extends CommandFather{
 
     private final String TAG = "Toast Event ";
 

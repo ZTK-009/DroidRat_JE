@@ -1,12 +1,11 @@
 package com.je_chen.droidrat_je.command;
 
 import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
 import com.je_chen.droidrat_je.modules.appintent.mail.SendMail;
 
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
-public class MailCommand extends CommandFather implements CommandProcessInterface {
+public class MailCommand extends CommandFather{
 
     private SendMail sendMail;
 

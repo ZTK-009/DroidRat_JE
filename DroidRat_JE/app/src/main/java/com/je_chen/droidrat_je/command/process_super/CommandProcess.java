@@ -65,7 +65,6 @@ public class CommandProcess {
         this.context = context;
         this.packageManager = packageManager;
         this.sensorManager = sensorManager;
-        this.commandFather = new CommandFather();
         this.mailCommand = new MailCommand();
         this.playCommand = new PlayCommand();
         this.callCommand = new CallCommand(context);
@@ -169,6 +168,9 @@ public class CommandProcess {
                 this.commandFather = webCommand;
                 this.commandFather.processCommand(command);
                 break;
+
+            default:
+                commandFather = null;
         }
     }
 

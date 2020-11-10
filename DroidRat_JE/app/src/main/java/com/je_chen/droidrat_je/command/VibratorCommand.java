@@ -4,12 +4,11 @@ import android.content.Context;
 import android.util.Log;
 
 import com.je_chen.droidrat_je.command.process_super.CommandFather;
-import com.je_chen.droidrat_je.command.process_super.CommandProcessInterface;
 import com.je_chen.droidrat_je.modules.vibrator.VibratorSystem;
 
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
-public class VibratorCommand extends CommandFather implements CommandProcessInterface {
+public class VibratorCommand extends CommandFather{
 
     private final String TAG = "Vibrator Event ";
 
