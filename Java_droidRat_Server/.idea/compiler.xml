@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="droidRat_Server" />
         <module name="Java_droidRat_Server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="droidRat_Server" target="1.8" />
       <module name="Java_droidRat_Server" target="1.8" />
     </bytecodeTargetLevel>
   </component>

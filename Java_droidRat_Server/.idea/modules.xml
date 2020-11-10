@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java_droidRat_Server.iml" filepath="$PROJECT_DIR$/.idea/Java_droidRat_Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/droidRat_Server.iml" filepath="$PROJECT_DIR$/droidRat_Server.iml" />
     </modules>
   </component>
 </project>
