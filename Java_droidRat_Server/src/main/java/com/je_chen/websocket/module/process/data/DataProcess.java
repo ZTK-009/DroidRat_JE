@@ -36,6 +36,12 @@ public class DataProcess {
             case "ToastD":
                 System.out.println(dataStringArray[0] + " : " + dataStringArray[1]);
                 break;
+
+            case "ResolveInfo":
+                System.out.println(dataStringArray[0] + " : " + dataStringArray[1]);
+
+            case "InstalledPackages":
+                System.out.println(dataStringArray[0] + " : " + dataStringArray[1]);
         }
     }
 }

