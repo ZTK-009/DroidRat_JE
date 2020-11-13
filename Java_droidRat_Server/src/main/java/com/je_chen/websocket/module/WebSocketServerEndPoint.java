@@ -1,6 +1,6 @@
 package com.je_chen.websocket.module;
 
-import com.je_chen.websocket.module.process.data.DataProcess;
+import com.je_chen.websocket.module.process.receive.data.process_super.DataProcess;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
@@ -44,7 +44,7 @@ public class WebSocketServerEndPoint {
     public void onMessage(String message, Session session) {
         try {
             if (!message.startsWith("deviceID ")) {
-                dataProcess.processData(message);
+                dataProcess.processString(message);
             } else {
                 String[] rawDeviceArray = message.split(" ");
                 userTable.put(rawDeviceArray[1],session);

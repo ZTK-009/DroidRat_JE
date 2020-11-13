@@ -27,7 +27,7 @@ public class InfoCommand extends CommandFather{
         getPhoneInfo = new GetPhoneInfo();
     }
 
-    @Override   
+    @Override
     public void send(String value) {
         websocket.send(value);
     }

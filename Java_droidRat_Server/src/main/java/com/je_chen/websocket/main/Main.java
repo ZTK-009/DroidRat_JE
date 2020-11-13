@@ -1,7 +1,7 @@
 package com.je_chen.websocket.main;
 
 import com.je_chen.websocket.module.WebSocketServerEndPoint;
-import com.je_chen.websocket.module.process.command.CommandProcess;
+import com.je_chen.websocket.module.process.send.command.process_super.CommandProcess;
 import org.glassfish.tyrus.server.Server;
 
 import javax.websocket.DeploymentException;
