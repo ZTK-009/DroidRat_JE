@@ -36,15 +36,15 @@ public class ToastCommand extends CommandFather{
                     String message = rawCommandArray[2];
                     Log.d(TAG, "Toast ToastN:" + message);
                     toastmaker.makeToast(message);
-                    this.send("Toast:ToastN:" + message);
+                    this.send("Toast:ToastN:" + "->" + message);
                     break;
 
                 case "ToastD":
                     String message1 = rawCommandArray[2];
                     String direction1 = rawCommandArray[3];
-                    Log.d(TAG, "Toast ToastD:" + message1 + " Direction:" + direction1);
+                    Log.d(TAG, "Toast ToastD:" + message1 + "\nDirection->" + direction1);
                     toastmaker.makeToast(message1,direction1);
-                    this.send("Toast:ToastD:" + message1 + " Direction:" + direction1);
+                    this.send("Toast:ToastD:" + "->" + message1 + "\nDirection->" + direction1);
                     break;
             }
         } catch (Exception e) {

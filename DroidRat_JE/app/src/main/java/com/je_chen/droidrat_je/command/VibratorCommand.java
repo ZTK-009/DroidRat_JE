@@ -32,7 +32,7 @@ public class VibratorCommand extends CommandFather{
                     int millSec = Integer.parseInt(rawCommandArray[2]);
                     Log.d(TAG,"Vibrator Vibrator:" + millSec);
                     vibratorSystem.startVibrator(millSec);
-                    this.send("Vibrator:Vibrator:" + millSec);
+                    this.send("Vibrator:Vibrator:" + "->" + millSec);
                     break;
             }
         }catch (Exception e){

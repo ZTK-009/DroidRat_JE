@@ -6,7 +6,7 @@ public class SMSData extends DataFather {
 
     @Override
     public void processData(String[] dataArray) {
-
+        System.out.println(dataArray[1] + " : " + dataArray[2]);
     }
 
 }

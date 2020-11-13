@@ -35,14 +35,14 @@ public class WebCommand extends CommandFather{
                     String webUri1 = rawCommandArray[2];
                     Log.d(TAG,"Web Websearch " + webUri1);
                     web.webSearch(context,webUri1);
-                    this.send("Web:Websearch:" + webUri1);
+                    this.send("Web:Websearch:" + "->" + webUri1);
                     break;
 
                 case "OpenWeb":
                     String webUri2 = rawCommandArray[2];
                     Log.d(TAG,"Web Openweb " + webUri2);
                     web.openWeb(context,webUri2);
-                    this.send("Web:Openweb:" + webUri2);
+                    this.send("Web:Openweb:" + "->" + webUri2);
                     break;
             }
         }catch (Exception e){

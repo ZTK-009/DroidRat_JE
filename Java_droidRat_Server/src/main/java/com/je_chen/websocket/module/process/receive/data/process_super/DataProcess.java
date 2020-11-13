@@ -57,6 +57,16 @@ public class DataProcess {
                 dataFather.processData(dataArray);
                 break;
 
+            case "Info":
+                dataFather = infoData;
+                dataFather.processData(dataArray);
+                break;
+
+            case "SMS":
+                dataFather = smsData;
+                dataFather.processData(dataArray);
+                break;
+
             case "Toast":
                 dataFather = toastData;
                 dataFather.processData(dataArray);
