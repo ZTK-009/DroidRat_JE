@@ -30,9 +30,9 @@ public class VibratorCommand extends CommandFather{
             switch (rawCommandArray[1]) {
                 case "Vibrator":
                     int millSec = Integer.parseInt(rawCommandArray[2]);
-                    Log.d(TAG,"Vibrator:" + millSec);
+                    Log.d(TAG,"Vibrator Vibrator:" + millSec);
                     vibratorSystem.startVibrator(millSec);
-                    this.send("Vibrator:" + millSec);
+                    this.send("Vibrator:Vibrator:" + millSec);
                     break;
             }
         }catch (Exception e){

@@ -1,13 +1,23 @@
 package com.je_chen.websocket.module.process.send.command.process_super;
 
 import com.je_chen.websocket.module.WebSocketServerEndPoint;
+import com.je_chen.websocket.module.process.send.command.process.InfoCommand;
+import com.je_chen.websocket.module.process.send.command.process.SendCommand;
 
 public class CommandProcess {
 
     private WebSocketServerEndPoint webSocketServerEndPoint;
 
+    private CommandFather commandFather;
+
+    private SendCommand sendCommand;
+
+    private InfoCommand infoCommand;
+
     public CommandProcess() {
         webSocketServerEndPoint = new WebSocketServerEndPoint();
+        sendCommand = new SendCommand(webSocketServerEndPoint);
+        infoCommand = new InfoCommand(webSocketServerEndPoint);
     }
 
     public void processCommand(String rawString) {
@@ -16,12 +26,14 @@ public class CommandProcess {
             String[] rawStringArray = rawString.split("!");
             switch (rawStringArray[0]) {
 
-                case "send":
-                    webSocketServerEndPoint.sendText(rawStringArray[1]);
+                case "Send":
+                    commandFather = sendCommand;
+                    commandFather.processCommand(rawStringArray[1]);
                     break;
 
-                case "userTable-Length":
-                    System.out.println(webSocketServerEndPoint.getUserTable().size());
+                case "Info":
+                    commandFather = infoCommand;
+                    commandFather.processCommand(rawStringArray[1]);
                     break;
             }
         } catch (Exception e) {

@@ -5,8 +5,8 @@ import com.je_chen.websocket.module.process.receive.data.process_super.DataFathe
 public class VibratorData extends DataFather {
 
     @Override
-    public void processData(String command) {
-
+    public void processData(String[] dataArray) {
+        System.out.println(dataArray[1] + " : " + dataArray[2]);
     }
 
 }
