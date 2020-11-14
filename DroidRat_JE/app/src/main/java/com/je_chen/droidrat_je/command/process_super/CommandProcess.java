@@ -70,7 +70,7 @@ public class CommandProcess {
         this.callCommand = new CallCommand(context);
         this.cameraCommand = new CameraCommand(context);
         this.infoCommand = new InfoCommand(packageManager, context);
-        this.runAppCommand = new RunAppCommand(packageManager);
+        this.runAppCommand = new RunAppCommand(context,packageManager);
         this.sensorCommand = new SensorCommand(sensorManager);
         this.smsCommand = new SMSCommand(context);
         this.toastCommand = new ToastCommand(context);

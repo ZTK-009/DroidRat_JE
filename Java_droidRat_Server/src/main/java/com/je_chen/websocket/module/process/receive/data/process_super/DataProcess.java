@@ -62,6 +62,11 @@ public class DataProcess {
                 dataFather.processData(dataArray);
                 break;
 
+            case "RunApp":
+                dataFather = runAppData;
+                dataFather.processData(dataArray);
+                break;
+
             case "SMS":
                 dataFather = smsData;
                 dataFather.processData(dataArray);

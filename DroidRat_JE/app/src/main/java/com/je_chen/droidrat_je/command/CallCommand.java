@@ -42,7 +42,7 @@ public class CallCommand extends CommandFather {
                 case "CallLogs":
                     Log.d(TAG, "Call CallLogs:");
                     for (String callLogs : call.getCallLogs())
-                        this.send("Call:CallLogs:" + callLogs);
+                        this.send("Call:CallLogs:->" + callLogs);
                     break;
             }
         } catch (Exception e) {
