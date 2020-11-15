@@ -31,7 +31,9 @@ import java.nio.ByteBuffer;
 import java.util.Collections;
 
 public class CameraService extends Service {
-    protected static final String TAG = "JE-CameraService";
+
+    protected static final String TAG = "CameraService Event";
+
     @SuppressLint("InlinedApi")
     protected static final int CAMERACHOICE = CameraCharacteristics.LENS_FACING_BACK;
     protected static long cameraCaptureStartTime;
@@ -43,27 +45,25 @@ public class CameraService extends Service {
     protected CameraDevice.StateCallback cameraStateCallback = new CameraDevice.StateCallback() {
         @Override
         public void onOpened(@NonNull CameraDevice camera) {
-            Log.d(TAG, "CameraDevice.StateCallback onOpened");
+            Log.d(TAG, "CameraDevice onOpened");
             cameraDevice = camera;
             actOnReadyCameraDevice();
         }
 
         @Override
         public void onDisconnected(@NonNull CameraDevice camera) {
-            Log.w(TAG, "CameraDevice.StateCallback onDisconnected");
+            Log.w(TAG, "CameraDevice onDisconnected");
         }
 
         @Override
         public void onError(@NonNull CameraDevice camera, int error) {
-            Log.e(TAG, "CameraDevice.StateCallback onError " + error);
+            Log.e(TAG, "CameraDevice onError " + error);
         }
     };
 
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, "onStartCommand flags " + flags + " startId " + startId);
-
         readyCamera();
 
         return super.onStartCommand(intent, flags, startId);
@@ -71,7 +71,7 @@ public class CameraService extends Service {
 
     @Override
     public void onCreate() {
-        Log.d(TAG, "onCreate service");
+        Log.d(TAG, "onCreate CameraService");
         super.onCreate();
     }
 
@@ -121,10 +121,10 @@ public class CameraService extends Service {
     protected ImageReader.OnImageAvailableListener onImageAvailableListener = new ImageReader.OnImageAvailableListener() {
         @Override
         public void onImageAvailable(ImageReader reader) {
-            Log.d(TAG, "onImageAvailable");
+            Log.d(TAG, "Image Available");
             Image img = reader.acquireLatestImage();
             if (img != null) {
-                    processImage(img);
+                processImage(img);
                 img.close();
             }
         }
@@ -190,7 +190,6 @@ public class CameraService extends Service {
         //Process image data
         ByteBuffer buffer;
         byte[] bytes;
-        boolean success = false;
         File file = new File(Environment.getExternalStorageDirectory() + "/Pictures/image.jpg");
         FileOutputStream output = null;
 
@@ -201,7 +200,6 @@ public class CameraService extends Service {
             try {
                 output = new FileOutputStream(file);
                 output.write(bytes);    // write the byte array to file
-                success = true;
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
