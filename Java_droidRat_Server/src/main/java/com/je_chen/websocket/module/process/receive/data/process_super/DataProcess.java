@@ -87,6 +87,8 @@ public class DataProcess {
                 dataFather.processData(dataArray);
                 break;
 
+            default:
+                System.out.println("Not Process String : " + dataString);
         }
     }
 }
