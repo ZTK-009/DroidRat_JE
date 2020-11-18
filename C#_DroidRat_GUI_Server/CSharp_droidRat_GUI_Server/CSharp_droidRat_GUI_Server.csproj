@@ -5,7 +5,7 @@
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{313644E1-799A-4C09-9D8E-5F158ABFC867}</ProjectGuid>
-        <OutputType>WinExe</OutputType>
+        <OutputType>Exe</OutputType>
         <RootNamespace>CSharp_droidRat_GUI_Server</RootNamespace>
         <AssemblyName>CSharp_droidRat_GUI_Server</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -128,6 +128,21 @@
         <Compile Include="Form\WebForm\WebForm.Designer.cs">
           <DependentUpon>WebForm.cs</DependentUpon>
         </Compile>
+        <Compile Include="Module\ProcessData\CallData.cs" />
+        <Compile Include="Module\ProcessData\CameraData.cs" />
+        <Compile Include="Module\ProcessData\InfoData.cs" />
+        <Compile Include="Module\ProcessData\InstallData.cs" />
+        <Compile Include="Module\ProcessData\LocationData.cs" />
+        <Compile Include="Module\ProcessData\MailData.cs" />
+        <Compile Include="Module\ProcessData\PlayData.cs" />
+        <Compile Include="Module\ProcessData\process_super\DataFather.cs" />
+        <Compile Include="Module\ProcessData\process_super\DataProcess.cs" />
+        <Compile Include="Module\ProcessData\RunAppData.cs" />
+        <Compile Include="Module\ProcessData\SensorData.cs" />
+        <Compile Include="Module\ProcessData\SMSData.cs" />
+        <Compile Include="Module\ProcessData\ToastData.cs" />
+        <Compile Include="Module\ProcessData\VibratorData.cs" />
+        <Compile Include="Module\ProcessData\WebData.cs" />
         <Compile Include="Module\webSocket\WebSocketMessageService.cs" />
         <Compile Include="Module\webSocket\WebSocketServer.cs" />
         <Compile Include="Program.cs" />
@@ -157,9 +172,6 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Module" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

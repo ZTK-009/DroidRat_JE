@@ -64,6 +64,25 @@
         </e>
       </e>
       <e p="Module" t="Include">
+        <e p="ProcessData" t="Include">
+          <e p="CallData.cs" t="Include" />
+          <e p="CameraData.cs" t="Include" />
+          <e p="InfoData.cs" t="Include" />
+          <e p="InstallData.cs" t="Include" />
+          <e p="LocationData.cs" t="Include" />
+          <e p="MailData.cs" t="Include" />
+          <e p="PlayData.cs" t="Include" />
+          <e p="process_super" t="Include">
+            <e p="DataFather.cs" t="Include" />
+            <e p="DataProcess.cs" t="Include" />
+          </e>
+          <e p="RunAppData.cs" t="Include" />
+          <e p="SensorData.cs" t="Include" />
+          <e p="SMSData.cs" t="Include" />
+          <e p="ToastData.cs" t="Include" />
+          <e p="VibratorData.cs" t="Include" />
+          <e p="WebData.cs" t="Include" />
+        </e>
         <e p="webSocket" t="Include">
           <e p="WebSocketMessageService.cs" t="Include" />
           <e p="WebSocketServer.cs" t="Include" />

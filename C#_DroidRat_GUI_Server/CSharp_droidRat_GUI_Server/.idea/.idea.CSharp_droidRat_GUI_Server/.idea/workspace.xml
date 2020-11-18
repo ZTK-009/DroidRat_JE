@@ -23,39 +23,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07ed282d-8a16-46c8-a314-6bceca91926c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Form/CallForm/CallForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/CallForm/CallForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/CameraForm/CameraForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/CameraForm/CameraForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/InfoForm/InfoForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/InfoForm/InfoForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/LocationForm/LocationForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/LocationForm/LocationForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/MailForm/MailForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/MailForm/MailForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/PlayForm/PlayForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/PlayForm/PlayForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/RunAppForm/RunAppForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/RunAppForm/RunAppForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/SMSForm/SMSForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/SMSForm/SMSForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/SensorForm/SensorForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/SensorForm/SensorForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/ToastForm/ToastForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/ToastForm/ToastForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/VibratorForm/VibratorForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/VibratorForm/VibratorForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/WebForm/WebForm.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Form/WebForm/WebForm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/dictionaries/JE_Chen.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/CallData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/CameraData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/InfoData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/InstallData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/LocationData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/MailData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/PlayData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/RunAppData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/SMSData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/SensorData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/ToastData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/VibratorData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/WebData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/process_super/DataFather.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/ProcessData/process_super/DataProcess.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.Form.MainForm.Form1.resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSharp_droidRat_GUI_Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CSharp_droidRat_GUI_Server.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/MainForm/MainForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form/MainForm/MainForm.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/MainForm/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form/MainForm/MainForm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Module/webSocket/WebSocketMessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Module/webSocket/WebSocketMessageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Module/webSocket/WebSocketServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Module/webSocket/WebSocketServer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.Form1.resources" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.pdb" afterDir="false" />
     </list>
@@ -89,9 +80,28 @@
         <option value="$PROJECT_DIR$/Form/VibratorForm/VibratorForm.cs" />
         <option value="$PROJECT_DIR$/Form/WebForm/WebForm.cs" />
         <option value="$PROJECT_DIR$/MainForm.cs" />
-        <option value="$PROJECT_DIR$/Form/MainForm/MainForm.cs" />
-        <option value="$PROJECT_DIR$/Module/webSocket/WebSocketMessageService.cs" />
         <option value="$PROJECT_DIR$/Module/webSocket/WebSocketServer.cs" />
+        <option value="$PROJECT_DIR$/Module/webSocket/ProcessFather.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessCommand/process_super/DataFather.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessCommand/process_super/DataProcess.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/process_super/DataFather.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/CallData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/CameraData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/InfoData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/InstallData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/LocationData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/MailData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/PlayData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/RunAppData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/SensorData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/SMSData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/ToastData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/VibratorData.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/WebData.cs" />
+        <option value="$PROJECT_DIR$/Module/webSocket/WebSocketMessageService.cs" />
+        <option value="$PROJECT_DIR$/Module/ProcessData/process_super/DataProcess.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Form/MainForm/MainForm.cs" />
       </list>
     </option>
   </component>
@@ -105,7 +115,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -113,7 +125,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -151,7 +163,7 @@
       <workItem from="1605667447078" duration="300000" />
       <workItem from="1605668133339" duration="952000" />
       <workItem from="1605669511774" duration="1939000" />
-      <workItem from="1605679062118" duration="3743000" />
+      <workItem from="1605679062118" duration="7099000" />
     </task>
     <servers />
   </component>
@@ -181,26 +193,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="704" y="383" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040@0.0.1920.1040" timestamp="1605682644982" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605682584121">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605687672908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605682584121" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605682584121">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605687672908" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605687672908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605682584121" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605682584121">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605687672908" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605687672908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605682584121" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605682584121">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605687672908" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605687672908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605682584121" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1605670429547">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605687672908" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1605687578413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605670429547" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605687578413" />
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1605682836035">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
