@@ -44,6 +44,7 @@
             this.ConnectButton.TabIndex = 0;
             this.ConnectButton.Text = "Connect";
             this.ConnectButton.UseVisualStyleBackColor = true;
+            this.ConnectButton.Click += new System.EventHandler(this.ConnectButton_Click);
             // 
             // urlBox
             // 
@@ -52,7 +53,7 @@
             this.urlBox.Name = "urlBox";
             this.urlBox.Size = new System.Drawing.Size(330, 36);
             this.urlBox.TabIndex = 1;
-            this.urlBox.Text = "ws://192.168.1.100:5050/websocket";
+            this.urlBox.Text = "ws://192.168.1.100:5050";
             // 
             // ServerUrlLabel
             // 
@@ -72,6 +73,7 @@
             this.CloseButton.TabIndex = 3;
             this.CloseButton.Text = "Close";
             this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // Form1
             // 
@@ -82,15 +84,15 @@
             this.Controls.Add(this.ServerUrlLabel);
             this.Controls.Add(this.urlBox);
             this.Controls.Add(this.ConnectButton);
+            this.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (136)));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "MainForm";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Button ConnectButton;
-
         private System.Windows.Forms.Label ServerUrlLabel;
         private System.Windows.Forms.TextBox urlBox;
 

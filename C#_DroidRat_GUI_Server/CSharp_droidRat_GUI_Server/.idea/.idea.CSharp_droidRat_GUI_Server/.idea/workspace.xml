@@ -23,24 +23,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07ed282d-8a16-46c8-a314-6bceca91926c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CSharp_droidRat_GUI_Server.csproj.DotSettings.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSharp_droidRat_GUI_Server.sln.DotSettings.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.Form1.resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.CopyComplete" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/CSharp_droidRat_GUI_Server/v15/.suo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/CSharp_droidRat_GUI_Server/v15/Server/sqlite3/storage.ide" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/CSharp_droidRat_GUI_Server/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/CSharp_droidRat_GUI_Server/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module/webSocket/WebSocketServer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferences.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSharp_droidRat_GUI_Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CSharp_droidRat_GUI_Server.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSharp_droidRat_GUI_Server.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/CSharp_droidRat_GUI_Server.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form/MainForm/MainForm.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form/MainForm/MainForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Form/MainForm/MainForm.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.Form1.resources" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.Form1.resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/CSharp_droidRat_GUI_Server.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webSocket/WebSocketServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/webSocket/WebSocketServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webSocket/WebSocketMessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Module/webSocket/WebSocketMessageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webSocket/WebSocketServer.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +57,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webSocket/WebSocketServer.cs" />
         <option value="$PROJECT_DIR$/Form1.Designer.cs" />
+        <option value="$PROJECT_DIR$/webSocket/WebSocketServer.cs" />
+        <option value="$PROJECT_DIR$/webSocket/WebSocketMessageService.cs" />
         <option value="$PROJECT_DIR$/Form1.cs" />
+        <option value="$PROJECT_DIR$/Form/CameraForm.cs" />
+        <option value="$PROJECT_DIR$/Form/aa.cs" />
+        <option value="$PROJECT_DIR$/Module/webSocket/WebSocketServer.cs" />
+        <option value="$PROJECT_DIR$/Form/MainForm/MainForm.cs" />
       </list>
     </option>
   </component>
@@ -77,6 +86,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -109,7 +119,12 @@
       <updated>1605626842854</updated>
       <workItem from="1605626849232" duration="1680000" />
       <workItem from="1605663316211" duration="1706000" />
-      <workItem from="1605665086936" duration="626000" />
+      <workItem from="1605665086936" duration="789000" />
+      <workItem from="1605667217300" duration="180000" />
+      <workItem from="1605667447078" duration="300000" />
+      <workItem from="1605668133339" duration="952000" />
+      <workItem from="1605669511774" duration="1939000" />
+      <workItem from="1605679062118" duration="2565000" />
     </task>
     <servers />
   </component>
@@ -139,21 +154,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="704" y="383" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040@0.0.1920.1040" timestamp="1605663598244" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605665036539">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1605681145604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605665036539" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605665036539">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605681145604" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1605681145604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605665036539" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605665036539">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605681145604" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1605681145604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605665036539" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605665036539">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605681145604" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1605681145604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605665036539" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605681145604" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1605670429547">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605670429547" />
   </component>
 </project>

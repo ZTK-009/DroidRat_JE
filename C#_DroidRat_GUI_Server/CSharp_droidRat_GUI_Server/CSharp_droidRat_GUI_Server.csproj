@@ -50,18 +50,18 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Form1.cs">
-            <SubType>Form</SubType>
+        <Compile Include="Form\MainForm\MainForm.cs">
+          <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Form1.Designer.cs">
-            <DependentUpon>Form1.cs</DependentUpon>
+        <Compile Include="Form\MainForm\MainForm.Designer.cs">
+          <DependentUpon>MainForm.cs</DependentUpon>
         </Compile>
+        <Compile Include="Module\webSocket\WebSocketMessageService.cs" />
+        <Compile Include="Module\webSocket\WebSocketServer.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="webSocket\WebSocketMessageService.cs" />
-        <Compile Include="webSocket\WebSocketServer.cs" />
-        <EmbeddedResource Include="Form1.resx">
-          <DependentUpon>Form1.cs</DependentUpon>
+        <EmbeddedResource Include="Form\MainForm\MainForm.resx">
+          <DependentUpon>MainForm.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +85,21 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Form\CallForm" />
+      <Folder Include="Form\CameraForm" />
+      <Folder Include="Form\InfoForm" />
+      <Folder Include="Form\LocationForm" />
+      <Folder Include="Form\MailForm" />
+      <Folder Include="Form\PlayForm" />
+      <Folder Include="Form\RunAppForm" />
+      <Folder Include="Form\SensorForm" />
+      <Folder Include="Form\SMSForm" />
+      <Folder Include="Form\ToastForm" />
+      <Folder Include="Form\VibratorForm" />
+      <Folder Include="Form\WebForm" />
+      <Folder Include="Module" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

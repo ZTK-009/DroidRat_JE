@@ -8,9 +8,31 @@
       <e p="bin" t="ExcludeRecursive" />
       <e p="CSharp_droidRat_GUI_Server.csproj" t="IncludeRecursive" />
       <e p="CSharp_droidRat_GUI_Server.sln" t="IncludeFlat" />
-      <e p="Form1.cs" t="Include" />
-      <e p="Form1.Designer.cs" t="Include" />
-      <e p="Form1.resx" t="Include" />
+      <e p="Form" t="Include">
+        <e p="CallForm" t="Include" />
+        <e p="CameraForm" t="Include" />
+        <e p="InfoForm" t="Include" />
+        <e p="LocationForm" t="Include" />
+        <e p="MailForm" t="Include" />
+        <e p="MainForm" t="Include">
+          <e p="MainForm.cs" t="Include" />
+          <e p="MainForm.Designer.cs" t="Include" />
+          <e p="MainForm.resx" t="Include" />
+        </e>
+        <e p="PlayForm" t="Include" />
+        <e p="RunAppForm" t="Include" />
+        <e p="SensorForm" t="Include" />
+        <e p="SMSForm" t="Include" />
+        <e p="ToastForm" t="Include" />
+        <e p="VibratorForm" t="Include" />
+        <e p="WebForm" t="Include" />
+      </e>
+      <e p="Module" t="Include">
+        <e p="webSocket" t="Include">
+          <e p="WebSocketMessageService.cs" t="Include" />
+          <e p="WebSocketServer.cs" t="Include" />
+        </e>
+      </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="packages.config" t="Include" />
@@ -21,10 +43,6 @@
         <e p="Resources.resx" t="Include" />
         <e p="Settings.Designer.cs" t="Include" />
         <e p="Settings.settings" t="Include" />
-      </e>
-      <e p="webSocket" t="Include">
-        <e p="WebSocketMessageService.cs" t="Include" />
-        <e p="WebSocketServer.cs" t="Include" />
       </e>
     </e>
   </component>
