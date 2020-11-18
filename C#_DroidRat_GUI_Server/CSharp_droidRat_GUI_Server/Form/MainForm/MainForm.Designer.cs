@@ -1,4 +1,4 @@
-﻿namespace CSharp_droidRat_GUI_Server
+﻿namespace CSharp_droidRat_GUI_Server.Form.MainForm
 {
     partial class Form1
     {

@@ -50,11 +50,83 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Form\CallForm\CallForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\CallForm\CallForm.Designer.cs">
+          <DependentUpon>CallForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\CameraForm\CameraForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\CameraForm\CameraForm.Designer.cs">
+          <DependentUpon>CameraForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\InfoForm\InfoForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\InfoForm\InfoForm.Designer.cs">
+          <DependentUpon>InfoForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\LocationForm\LocationForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\LocationForm\LocationForm.Designer.cs">
+          <DependentUpon>LocationForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\MailForm\MailForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\MailForm\MailForm.Designer.cs">
+          <DependentUpon>MailForm.cs</DependentUpon>
+        </Compile>
         <Compile Include="Form\MainForm\MainForm.cs">
           <SubType>Form</SubType>
         </Compile>
         <Compile Include="Form\MainForm\MainForm.Designer.cs">
           <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\PlayForm\PlayForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\PlayForm\PlayForm.Designer.cs">
+          <DependentUpon>PlayForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\RunAppForm\RunAppForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\RunAppForm\RunAppForm.Designer.cs">
+          <DependentUpon>RunAppForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\SensorForm\SensorForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\SensorForm\SensorForm.Designer.cs">
+          <DependentUpon>SensorForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\SMSForm\SMSForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\SMSForm\SMSForm.Designer.cs">
+          <DependentUpon>SMSForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\ToastForm\ToastForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\ToastForm\ToastForm.Designer.cs">
+          <DependentUpon>ToastForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\VibratorForm\VibratorForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\VibratorForm\VibratorForm.Designer.cs">
+          <DependentUpon>VibratorForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\WebForm\WebForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\WebForm\WebForm.Designer.cs">
+          <DependentUpon>WebForm.cs</DependentUpon>
         </Compile>
         <Compile Include="Module\webSocket\WebSocketMessageService.cs" />
         <Compile Include="Module\webSocket\WebSocketServer.cs" />
@@ -87,18 +159,6 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Form\CallForm" />
-      <Folder Include="Form\CameraForm" />
-      <Folder Include="Form\InfoForm" />
-      <Folder Include="Form\LocationForm" />
-      <Folder Include="Form\MailForm" />
-      <Folder Include="Form\PlayForm" />
-      <Folder Include="Form\RunAppForm" />
-      <Folder Include="Form\SensorForm" />
-      <Folder Include="Form\SMSForm" />
-      <Folder Include="Form\ToastForm" />
-      <Folder Include="Form\VibratorForm" />
-      <Folder Include="Form\WebForm" />
       <Folder Include="Module" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

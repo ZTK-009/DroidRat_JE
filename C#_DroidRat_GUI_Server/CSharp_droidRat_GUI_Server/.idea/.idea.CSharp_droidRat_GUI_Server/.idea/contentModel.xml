@@ -9,23 +9,59 @@
       <e p="CSharp_droidRat_GUI_Server.csproj" t="IncludeRecursive" />
       <e p="CSharp_droidRat_GUI_Server.sln" t="IncludeFlat" />
       <e p="Form" t="Include">
-        <e p="CallForm" t="Include" />
-        <e p="CameraForm" t="Include" />
-        <e p="InfoForm" t="Include" />
-        <e p="LocationForm" t="Include" />
-        <e p="MailForm" t="Include" />
+        <e p="CallForm" t="Include">
+          <e p="CallForm.cs" t="Include" />
+          <e p="CallForm.Designer.cs" t="Include" />
+        </e>
+        <e p="CameraForm" t="Include">
+          <e p="CameraForm.cs" t="Include" />
+          <e p="CameraForm.Designer.cs" t="Include" />
+        </e>
+        <e p="InfoForm" t="Include">
+          <e p="InfoForm.cs" t="Include" />
+          <e p="InfoForm.Designer.cs" t="Include" />
+        </e>
+        <e p="LocationForm" t="Include">
+          <e p="LocationForm.cs" t="Include" />
+          <e p="LocationForm.Designer.cs" t="Include" />
+        </e>
+        <e p="MailForm" t="Include">
+          <e p="MailForm.cs" t="Include" />
+          <e p="MailForm.Designer.cs" t="Include" />
+        </e>
         <e p="MainForm" t="Include">
           <e p="MainForm.cs" t="Include" />
           <e p="MainForm.Designer.cs" t="Include" />
           <e p="MainForm.resx" t="Include" />
         </e>
-        <e p="PlayForm" t="Include" />
-        <e p="RunAppForm" t="Include" />
-        <e p="SensorForm" t="Include" />
-        <e p="SMSForm" t="Include" />
-        <e p="ToastForm" t="Include" />
-        <e p="VibratorForm" t="Include" />
-        <e p="WebForm" t="Include" />
+        <e p="PlayForm" t="Include">
+          <e p="PlayForm.cs" t="Include" />
+          <e p="PlayForm.Designer.cs" t="Include" />
+        </e>
+        <e p="RunAppForm" t="Include">
+          <e p="RunAppForm.cs" t="Include" />
+          <e p="RunAppForm.Designer.cs" t="Include" />
+        </e>
+        <e p="SensorForm" t="Include">
+          <e p="SensorForm.cs" t="Include" />
+          <e p="SensorForm.Designer.cs" t="Include" />
+        </e>
+        <e p="SMSForm" t="Include">
+          <e p="SMSForm.cs" t="Include" />
+          <e p="SMSForm.Designer.cs" t="Include" />
+        </e>
+        <e p="ToastForm" t="Include">
+          <e p="ToastForm.cs" t="Include" />
+          <e p="ToastForm.Designer.cs" t="Include" />
+        </e>
+        <e p="VibratorForm" t="Include">
+          <e p="VibratorForm.cs" t="Include" />
+          <e p="VibratorForm.Designer.cs" t="Include" />
+        </e>
+        <e p="WebForm" t="Include">
+          <e p="WebForm.cs" t="Include" />
+          <e p="WebForm.Designer.cs" t="Include" />
+        </e>
       </e>
       <e p="Module" t="Include">
         <e p="webSocket" t="Include">
