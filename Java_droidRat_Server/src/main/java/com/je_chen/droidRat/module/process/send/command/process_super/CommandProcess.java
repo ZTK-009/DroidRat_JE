@@ -7,12 +7,9 @@ import com.je_chen.droidRat.module.process.send.command.process.SendCommand;
 public class CommandProcess {
 
     private final WebSocketServerEndPoint webSocketServerEndPoint;
-
-    private CommandFather commandFather;
-
     private final SendCommand sendCommand;
-
     private final InfoCommand infoCommand;
+    private CommandFather commandFather;
 
     public CommandProcess() {
         webSocketServerEndPoint = new WebSocketServerEndPoint();

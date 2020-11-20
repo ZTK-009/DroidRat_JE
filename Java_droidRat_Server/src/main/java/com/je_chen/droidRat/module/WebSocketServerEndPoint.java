@@ -12,9 +12,9 @@ import java.util.List;
 @ServerEndpoint(value = "/websocket")
 public class WebSocketServerEndPoint {
 
-    private static Session user;
     private static final Hashtable<String, Session> userTable = new Hashtable<>();
     private static final List<Session> sessionArrayList = new ArrayList<>();
+    private static Session user;
     private DataProcess dataProcess;
 
     @OnOpen

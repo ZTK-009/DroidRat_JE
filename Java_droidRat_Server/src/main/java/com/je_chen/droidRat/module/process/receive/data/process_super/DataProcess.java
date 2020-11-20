@@ -4,33 +4,20 @@ import com.je_chen.droidRat.module.process.receive.data.process.*;
 
 public class DataProcess {
 
-    private DataFather dataFather;
-
     private final CallData callData;
-
     private final CameraData cameraData;
-
     private final InfoData infoData;
-
     private final InstallData installData;
-
     private final LocationData locationData;
-
     private final MailData mailData;
-
     private final PlayData playData;
-
     private final RunAppData runAppData;
-
     private final SensorData sensorData;
-
     private final SMSData smsData;
-
     private final ToastData toastData;
-
     private final VibratorData vibratorData;
-
     private final WebData webData;
+    private DataFather dataFather;
 
     public DataProcess() {
         callData = new CallData();
