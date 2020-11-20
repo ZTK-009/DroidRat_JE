@@ -2,17 +2,16 @@ package com.je_chen.droidRat.gui.runappgui;
 
 import com.je_chen.droidRat.gui.guisuper.GuiFatherAbstract;
 import com.je_chen.droidRat.gui.guisuper.GuiFatherInterface;
-import com.je_chen.droidRat.gui.playgui.PlayGui;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class RunAppGui extends GuiFatherAbstract implements GuiFatherInterface<RunAppGui> {
+    private static RunAppGui Instance;
     private JFrame jFrame;
     private JPanel jPanel;
     private String windowName;
-    private static RunAppGui Instance;
 
     public static synchronized RunAppGui getInstance(String windowName) {
         if (Instance == null) {
@@ -22,8 +21,7 @@ public class RunAppGui extends GuiFatherAbstract implements GuiFatherInterface<R
         return Instance;
     }
 
-    @Override
-    public void show(String windowName) {
+    private void show(String windowName) {
         this.windowName = windowName;
         jFrame = new JFrame(windowName);
         jFrame.setContentPane(getInstance(windowName).jPanel);

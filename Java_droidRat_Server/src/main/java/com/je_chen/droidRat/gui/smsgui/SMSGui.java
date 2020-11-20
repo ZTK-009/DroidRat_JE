@@ -2,17 +2,16 @@ package com.je_chen.droidRat.gui.smsgui;
 
 import com.je_chen.droidRat.gui.guisuper.GuiFatherAbstract;
 import com.je_chen.droidRat.gui.guisuper.GuiFatherInterface;
-import com.je_chen.droidRat.gui.sensorgui.SensorGui;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class SMSGui extends GuiFatherAbstract implements GuiFatherInterface<SMSGui> {
+    private static SMSGui Instance;
     private JFrame jFrame;
     private JPanel jPanel;
     private String windowName;
-    private static SMSGui Instance;
 
     public static synchronized SMSGui getInstance(String windowName) {
         if (Instance == null) {
@@ -22,8 +21,7 @@ public class SMSGui extends GuiFatherAbstract implements GuiFatherInterface<SMSG
         return Instance;
     }
 
-    @Override
-    public void show(String windowName) {
+    private void show(String windowName) {
         this.windowName = windowName;
         jFrame = new JFrame(windowName);
         jFrame.setContentPane(getInstance(windowName).jPanel);

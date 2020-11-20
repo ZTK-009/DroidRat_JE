@@ -2,17 +2,16 @@ package com.je_chen.droidRat.gui.callgui;
 
 import com.je_chen.droidRat.gui.guisuper.GuiFatherAbstract;
 import com.je_chen.droidRat.gui.guisuper.GuiFatherInterface;
-import com.je_chen.droidRat.gui.maingui.MainGui;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class CallGui extends GuiFatherAbstract implements GuiFatherInterface<CallGui> {
+    private static CallGui Instance;
     private JFrame jFrame;
     private JPanel jPanel;
     private String windowName;
-    private static CallGui Instance;
 
     public static synchronized CallGui getInstance(String windowName) {
         if (Instance == null) {
@@ -22,8 +21,7 @@ public class CallGui extends GuiFatherAbstract implements GuiFatherInterface<Cal
         return Instance;
     }
 
-    @Override
-    public void show(String windowName) {
+    private void show(String windowName) {
         this.windowName = windowName;
         jFrame = new JFrame(windowName);
         jFrame.setContentPane(getInstance(windowName).jPanel);

@@ -1,6 +1,5 @@
 package com.je_chen.droidRat.gui.infogui;
 
-import com.je_chen.droidRat.gui.callgui.CallGui;
 import com.je_chen.droidRat.gui.guisuper.GuiFatherAbstract;
 import com.je_chen.droidRat.gui.guisuper.GuiFatherInterface;
 
@@ -9,10 +8,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class InfoGui extends GuiFatherAbstract implements GuiFatherInterface<InfoGui> {
+    private static InfoGui Instance;
     private JFrame jFrame;
     private JPanel jPanel;
     private String windowName;
-    private static InfoGui Instance;
 
     public static synchronized InfoGui getInstance(String windowName) {
         if (Instance == null) {
@@ -22,8 +21,7 @@ public class InfoGui extends GuiFatherAbstract implements GuiFatherInterface<Inf
         return Instance;
     }
 
-    @Override
-    public void show(String windowName) {
+    private void show(String windowName) {
         this.windowName = windowName;
         jFrame = new JFrame(windowName);
         jFrame.setContentPane(getInstance(windowName).jPanel);

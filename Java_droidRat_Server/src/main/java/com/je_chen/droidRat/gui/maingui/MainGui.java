@@ -13,7 +13,6 @@ public class MainGui extends GuiFatherAbstract implements GuiFatherInterface<Mai
 
     private static MainGui Instance;
     private String windowName;
-
     private JFrame jFrame;
     private JPanel jPanel;
     private JButton Connect;
@@ -24,14 +23,6 @@ public class MainGui extends GuiFatherAbstract implements GuiFatherInterface<Mai
     private JTextField textField1;
     private JToolBar menuBar;
 
-    public static synchronized MainGui getInstance(String windowName) {
-        if (Instance == null) {
-            Instance = new MainGui();
-            Instance.show(windowName);
-        }
-        return Instance;
-    }
-
     private MainGui() {
         Connect.addActionListener(new ActionListener() {
             @Override
@@ -41,8 +32,15 @@ public class MainGui extends GuiFatherAbstract implements GuiFatherInterface<Mai
         });
     }
 
-    @Override
-    public void show(String windowName) {
+    public static synchronized MainGui getInstance(String windowName) {
+        if (Instance == null) {
+            Instance = new MainGui();
+            Instance.show(windowName);
+        }
+        return Instance;
+    }
+
+    private void show(String windowName) {
         this.windowName = windowName;
         menuBar.setFloatable(false);
         jFrame = new JFrame(windowName);

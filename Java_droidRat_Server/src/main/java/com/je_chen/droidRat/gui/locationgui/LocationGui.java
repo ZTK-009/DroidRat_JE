@@ -2,17 +2,16 @@ package com.je_chen.droidRat.gui.locationgui;
 
 import com.je_chen.droidRat.gui.guisuper.GuiFatherAbstract;
 import com.je_chen.droidRat.gui.guisuper.GuiFatherInterface;
-import com.je_chen.droidRat.gui.installgui.InstallGui;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class LocationGui extends GuiFatherAbstract implements GuiFatherInterface<LocationGui> {
+    private static LocationGui Instance;
     private JFrame jFrame;
     private JPanel jPanel;
     private String windowName;
-    private static LocationGui Instance;
 
     public static synchronized LocationGui getInstance(String windowName) {
         if (Instance == null) {
@@ -22,8 +21,7 @@ public class LocationGui extends GuiFatherAbstract implements GuiFatherInterface
         return Instance;
     }
 
-    @Override
-    public void show(String windowName) {
+    private void show(String windowName) {
         this.windowName = windowName;
         jFrame = new JFrame(windowName);
         jFrame.setContentPane(getInstance(windowName).jPanel);

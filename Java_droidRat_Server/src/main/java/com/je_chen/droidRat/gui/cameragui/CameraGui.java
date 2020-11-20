@@ -1,6 +1,5 @@
 package com.je_chen.droidRat.gui.cameragui;
 
-import com.je_chen.droidRat.gui.callgui.CallGui;
 import com.je_chen.droidRat.gui.guisuper.GuiFatherAbstract;
 import com.je_chen.droidRat.gui.guisuper.GuiFatherInterface;
 
@@ -9,10 +8,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class CameraGui extends GuiFatherAbstract implements GuiFatherInterface<CameraGui> {
+    private static CameraGui Instance;
     private JFrame jFrame;
     private JPanel jPanel;
     private String windowName;
-    private static CameraGui Instance;
 
     public static synchronized CameraGui getInstance(String windowName) {
         if (Instance == null) {
@@ -22,8 +21,7 @@ public class CameraGui extends GuiFatherAbstract implements GuiFatherInterface<C
         return Instance;
     }
 
-    @Override
-    public void show(String windowName) {
+    private void show(String windowName) {
         this.windowName = windowName;
         jFrame = new JFrame(windowName);
         jFrame.setContentPane(getInstance(windowName).jPanel);
