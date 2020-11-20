@@ -19,7 +19,6 @@ public class Websocket extends WebSocketClient {
     private static Websocket instance;
 
     public static Websocket instance() {
-        if (instance != null) ;
         return instance;
     }
 

@@ -33,6 +33,11 @@
             this.urlBox = new System.Windows.Forms.TextBox();
             this.ServerUrlLabel = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.MainFormMenu = new System.Windows.Forms.MenuStrip();
+            this.passToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feautreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainFormMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // ConnectButton
@@ -49,7 +54,7 @@
             // urlBox
             // 
             this.urlBox.Font = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (136)));
-            this.urlBox.Location = new System.Drawing.Point(233, 9);
+            this.urlBox.Location = new System.Drawing.Point(168, 34);
             this.urlBox.Name = "urlBox";
             this.urlBox.Size = new System.Drawing.Size(330, 36);
             this.urlBox.TabIndex = 1;
@@ -58,7 +63,7 @@
             // ServerUrlLabel
             // 
             this.ServerUrlLabel.Font = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (136)));
-            this.ServerUrlLabel.Location = new System.Drawing.Point(77, 9);
+            this.ServerUrlLabel.Location = new System.Drawing.Point(12, 34);
             this.ServerUrlLabel.Name = "ServerUrlLabel";
             this.ServerUrlLabel.Size = new System.Drawing.Size(150, 36);
             this.ServerUrlLabel.TabIndex = 2;
@@ -75,6 +80,33 @@
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // MainFormMenu
+            // 
+            this.MainFormMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.passToolStripMenuItem, this.settingToolStripMenuItem, this.feautreToolStripMenuItem});
+            this.MainFormMenu.Location = new System.Drawing.Point(0, 0);
+            this.MainFormMenu.Name = "MainFormMenu";
+            this.MainFormMenu.Size = new System.Drawing.Size(800, 24);
+            this.MainFormMenu.TabIndex = 4;
+            this.MainFormMenu.Text = "MainGUIMenu";
+            // 
+            // passToolStripMenuItem
+            // 
+            this.passToolStripMenuItem.Name = "passToolStripMenuItem";
+            this.passToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.passToolStripMenuItem.Text = "File";
+            // 
+            // settingToolStripMenuItem
+            // 
+            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.settingToolStripMenuItem.Text = "Setting";
+            // 
+            // feautreToolStripMenuItem
+            // 
+            this.feautreToolStripMenuItem.Name = "feautreToolStripMenuItem";
+            this.feautreToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.feautreToolStripMenuItem.Text = "Feature";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -84,12 +116,22 @@
             this.Controls.Add(this.ServerUrlLabel);
             this.Controls.Add(this.urlBox);
             this.Controls.Add(this.ConnectButton);
+            this.Controls.Add(this.MainFormMenu);
             this.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (136)));
+            this.MainMenuStrip = this.MainFormMenu;
             this.Name = "Form1";
             this.Text = "MainForm";
+            this.MainFormMenu.ResumeLayout(false);
+            this.MainFormMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.MenuStrip MainFormMenu;
+
+        private System.Windows.Forms.ToolStripMenuItem feautreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem passToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
 
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Button ConnectButton;
