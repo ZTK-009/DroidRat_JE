@@ -15,7 +15,6 @@ public class MainGui extends GuiFatherAbstract implements GuiFatherInterface<Mai
     private String windowName;
 
     private JFrame jFrame;
-
     private JPanel jPanel;
     private JButton Connect;
     private JButton Close;
@@ -25,6 +24,14 @@ public class MainGui extends GuiFatherAbstract implements GuiFatherInterface<Mai
     private JTextField textField1;
     private JToolBar menuBar;
 
+    public static synchronized MainGui getInstance(String windowName) {
+        if (Instance == null) {
+            Instance = new MainGui();
+            Instance.show(windowName);
+        }
+        return Instance;
+    }
+
     private MainGui() {
         Connect.addActionListener(new ActionListener() {
             @Override
@@ -32,14 +39,6 @@ public class MainGui extends GuiFatherAbstract implements GuiFatherInterface<Mai
                 JOptionPane.showMessageDialog(null, "Hello");
             }
         });
-    }
-
-    public static synchronized MainGui getInstance(String windowName) {
-        if (Instance == null) {
-            Instance = new MainGui();
-            Instance.show(windowName);
-        }
-        return Instance;
     }
 
     @Override
@@ -59,8 +58,8 @@ public class MainGui extends GuiFatherAbstract implements GuiFatherInterface<Mai
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
                 Instance = null;
-                System.out.println(windowName + " Closed");
-                jFrame.dispose();
+                System.out.println(windowName + " Frame Closed");
+                System.exit(0);
             }
         });
     }
