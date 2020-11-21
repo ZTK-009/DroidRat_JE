@@ -24,6 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="07ed282d-8a16-46c8-a314-6bceca91926c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSharp_droidRat_GUI_Server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java_droidRat_Server/src/main/java/com/je_chen/droidRat/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_droidRat_Server/src/main/java/com/je_chen/droidRat/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Java_droidRat_Server/src/test/java/gui/GuiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_droidRat_Server/src/test/java/gui/GuiTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +142,7 @@
       <workItem from="1605669511774" duration="1939000" />
       <workItem from="1605679062118" duration="9244000" />
       <workItem from="1605858044178" duration="1563000" />
+      <workItem from="1605885383207" duration="594000" />
     </task>
     <servers />
   </component>
