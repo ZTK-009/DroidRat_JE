@@ -1,8 +1,9 @@
-machine:
-  java:
-    version: oraclejdk8
-
-dependencies:
-  override:
-    - chmod +x gradlew
-
+version: 2
+jobs:
+  build:
+    # Remove if parallelism is not desired
+    parallelism: 2
+    environment:
+      # Configure the JVM and Gradle to avoid OOM errors
+      _JAVA_OPTIONS: "-Xmx3g"
+      GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2"
