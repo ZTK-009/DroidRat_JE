@@ -27,6 +27,7 @@ public class MailGui extends GuiFatherAbstract implements GuiFatherInterface<Mai
         jFrame = new JFrame(windowName);
         jFrame.setContentPane(getInstance(windowName).jPanel);
         jFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        jFrame.setSize(500,500);
         closeEvent();
         jFrame.setVisible(true);
     }

