@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="droidRat_Server" target="8" />
+      <module name="droidRat_Server" target="1.8" />
       <module name="Java_droidRat_Server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
