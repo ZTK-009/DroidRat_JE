@@ -10,9 +10,7 @@ import java.awt.event.WindowEvent;
 
 public class MailGui extends GuiFather implements GuiFatherInterface {
     private static MailGui Instance;
-    private JFrame jFrame;
     private JPanel jPanel;
-    private String windowName;
 
     public static synchronized MailGui getInstance(String windowName) {
         if (Instance == null) {
@@ -23,7 +21,8 @@ public class MailGui extends GuiFather implements GuiFatherInterface {
     }
 
     @Override
-    protected void inCloseEvent() {
-        Instance = null;
+    protected void closeEvent() {
+        super.closeEvent();
+        instance = null;
     }
 }

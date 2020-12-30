@@ -9,9 +9,7 @@ import java.awt.event.WindowEvent;
 
 public class InstallGui extends GuiFather implements GuiFatherInterface {
     private static InstallGui Instance;
-    private JFrame jFrame;
     private JPanel jPanel;
-    private String windowName;
 
     public static synchronized InstallGui getInstance(String windowName) {
         if (Instance == null) {
@@ -22,7 +20,8 @@ public class InstallGui extends GuiFather implements GuiFatherInterface {
     }
 
     @Override
-    protected void inCloseEvent() {
-        Instance = null;
+    protected void closeEvent() {
+        super.closeEvent();
+        instance = null;
     }
 }

@@ -86,10 +86,10 @@ public class CameraService extends Service {
     public void onDestroy() {
         try {
             cameraCaptureSession.abortCaptures();
-        } catch (CameraAccessException e) {
+            cameraCaptureSession.close();
+        } catch (Exception e) {
             Log.e(TAG, e.getMessage());
         }
-        cameraCaptureSession.close();
     }
 
     @Nullable
@@ -212,8 +212,13 @@ public class CameraService extends Service {
             } finally {
                 image.close(); // close this to free up buffer for other images
                 Bitmap bitmap = BitmapFactory.decodeFile(file.getPath());
-                if (bitmap != null)
-                    websocket.send(ImageUtil.convert(bitmap) + "\n\n");
+                if (bitmap != null && websocket != null)
+                    websocket.send("Base64Image " + ImageUtil.convert(bitmap) + "\n");
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 if (null != output) {
                     try {
                         output.close();

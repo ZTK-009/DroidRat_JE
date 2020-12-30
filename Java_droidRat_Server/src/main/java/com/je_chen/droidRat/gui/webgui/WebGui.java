@@ -9,9 +9,7 @@ import java.awt.event.WindowEvent;
 
 public class WebGui extends GuiFather implements GuiFatherInterface {
     private static WebGui Instance;
-    private JFrame jFrame;
     private JPanel jPanel;
-    private String windowName;
 
     public static synchronized WebGui getInstance(String windowName) {
         if (Instance == null) {
@@ -22,7 +20,8 @@ public class WebGui extends GuiFather implements GuiFatherInterface {
     }
 
     @Override
-    protected void inCloseEvent() {
-        Instance = null;
+    protected void closeEvent() {
+        super.closeEvent();
+        instance = null;
     }
 }

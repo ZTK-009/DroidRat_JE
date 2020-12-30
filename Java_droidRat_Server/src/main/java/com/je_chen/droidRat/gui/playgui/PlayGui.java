@@ -9,9 +9,7 @@ import java.awt.event.WindowEvent;
 
 public class PlayGui extends GuiFather implements GuiFatherInterface {
     private static PlayGui Instance;
-    private JFrame jFrame;
     private JPanel jPanel;
-    private String windowName;
 
     public static synchronized PlayGui getInstance(String windowName) {
         if (Instance == null) {
@@ -22,7 +20,8 @@ public class PlayGui extends GuiFather implements GuiFatherInterface {
     }
 
     @Override
-    protected void inCloseEvent() {
-        Instance = null;
+    protected void closeEvent() {
+        super.closeEvent();
+        instance = null;
     }
 }

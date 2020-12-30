@@ -44,6 +44,11 @@ public class DataProcess {
                 dataFather.processData(dataArray);
                 break;
 
+            case "Camera":
+                dataFather = cameraData;
+                dataFather.processData(dataArray);
+                break;
+
             case "Info":
                 dataFather = infoData;
                 dataFather.processData(dataArray);

@@ -9,9 +9,7 @@ import java.awt.event.WindowEvent;
 
 public class SensorGui extends GuiFather implements GuiFatherInterface {
     private static SensorGui Instance;
-    private JFrame jFrame;
     private JPanel jPanel;
-    private String windowName;
 
     public static synchronized SensorGui getInstance(String windowName) {
         if (Instance == null) {
@@ -22,7 +20,8 @@ public class SensorGui extends GuiFather implements GuiFatherInterface {
     }
 
     @Override
-    protected void inCloseEvent() {
-        Instance = null;
+    protected void closeEvent() {
+        super.closeEvent();
+        instance = null;
     }
 }

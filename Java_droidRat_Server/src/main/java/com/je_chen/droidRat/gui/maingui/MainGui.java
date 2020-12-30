@@ -37,15 +37,9 @@ public class MainGui extends GuiFather implements GuiFatherInterface {
     }
 
     @Override
-    protected void beforeShow() {
-        menuBar.setFloatable(false);
-        jFrame.setContentPane(getInstance(windowName).jPanel);
+    protected void closeEvent() {
+        super.closeEvent();
+        instance = null;
     }
-
-    @Override
-    protected void inCloseEvent() {
-        Instance = null;
-    }
-
 
 }

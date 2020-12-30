@@ -4,6 +4,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.Base64;
 
@@ -24,7 +25,7 @@ public class Base64Image {
         return imageBase64;
     }
 
-    public BufferedImage base64String_To_Image(String base64String) {
+    public BufferedImage base64String_To_Image(String base64String,Boolean save) {
         BufferedImage imageBase64 = null;
         byte[] imageByte;
         try {
@@ -32,6 +33,13 @@ public class Base64Image {
             ByteArrayInputStream imageByteStream = new ByteArrayInputStream(imageByte);
             imageBase64 = ImageIO.read(imageByteStream);
             imageByteStream.close();
+            if(save){
+                try {
+                    ImageIO.write(imageBase64, "png", new File("CameraImage"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
