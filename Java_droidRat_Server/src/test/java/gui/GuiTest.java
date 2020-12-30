@@ -1,4 +1,4 @@
-package test.java.gui;
+package gui;
 
 import com.je_chen.droidRat.gui.callgui.CallGui;
 import com.je_chen.droidRat.gui.cameragui.CameraGui;

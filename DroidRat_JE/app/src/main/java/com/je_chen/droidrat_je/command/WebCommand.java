@@ -8,7 +8,7 @@ import com.je_chen.droidrat_je.modules.appintent.web.Web;
 
 import static com.je_chen.droidrat_je.service.command.ProcessCommandService.websocket;
 
-public class WebCommand extends CommandFather{
+public class WebCommand extends CommandFather {
 
     private final String TAG = "Web Event ";
 
@@ -16,8 +16,8 @@ public class WebCommand extends CommandFather{
 
     private Context context;
 
-    public WebCommand(Context context){
-        this.context=context;
+    public WebCommand(Context context) {
+        this.context = context;
         web = new Web();
     }
 
@@ -33,19 +33,19 @@ public class WebCommand extends CommandFather{
             switch (rawCommandArray[1]) {
                 case "WebSearch":
                     String webUri1 = rawCommandArray[2];
-                    Log.d(TAG,"Web Websearch " + webUri1);
-                    web.webSearch(context,webUri1);
-                    this.send("Web:Websearch:" + "->" + webUri1);
+                    Log.d(TAG, "Web Websearch " + webUri1);
+                    web.webSearch(context, webUri1);
+                    this.send("Web Websearch" + webUri1);
                     break;
 
                 case "OpenWeb":
                     String webUri2 = rawCommandArray[2];
-                    Log.d(TAG,"Web Openweb " + webUri2);
-                    web.openWeb(context,webUri2);
-                    this.send("Web:Openweb:" + "->" + webUri2);
+                    Log.d(TAG, "Web Openweb " + webUri2);
+                    web.openWeb(context, webUri2);
+                    this.send("Web Openweb " + webUri2);
                     break;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

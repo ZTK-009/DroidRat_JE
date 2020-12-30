@@ -6,13 +6,11 @@ import com.je_chen.droidRat.module.process.send.command.process.SendCommand;
 
 public class CommandProcess {
 
-    private final WebSocketServerEndPoint webSocketServerEndPoint;
     private final SendCommand sendCommand;
     private final InfoCommand infoCommand;
-    private CommandFather commandFather;
 
     public CommandProcess() {
-        webSocketServerEndPoint = new WebSocketServerEndPoint();
+        WebSocketServerEndPoint webSocketServerEndPoint = new WebSocketServerEndPoint();
         sendCommand = new SendCommand(webSocketServerEndPoint);
         infoCommand = new InfoCommand(webSocketServerEndPoint);
     }
@@ -24,7 +22,7 @@ public class CommandProcess {
             switch (rawStringArray[0]) {
 
                 case "Send":
-                    commandFather = sendCommand;
+                    CommandFather commandFather = sendCommand;
                     commandFather.processCommand(rawStringArray[1]);
                     break;
 

@@ -27,12 +27,12 @@ public class GuiFather {
             @Override
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
-                afterCloseEvent();
+                inCloseEvent();
                 System.out.println(windowName + " Frame Closed");
                 System.exit(0);
             }
         });
     }
 
-    protected void afterCloseEvent(){}
+    protected void inCloseEvent(){}
 }

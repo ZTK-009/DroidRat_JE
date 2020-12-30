@@ -22,7 +22,7 @@ public class WebGui extends GuiFather implements GuiFatherInterface {
     }
 
     @Override
-    protected void afterCloseEvent() {
+    protected void inCloseEvent() {
         Instance = null;
     }
 }

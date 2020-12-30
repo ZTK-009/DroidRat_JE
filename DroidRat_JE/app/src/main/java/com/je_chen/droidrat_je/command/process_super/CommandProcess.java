@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.hardware.SensorManager;
 import android.location.LocationManager;
+import android.os.Build;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -70,15 +71,13 @@ public class CommandProcess {
         this.callCommand = new CallCommand(context);
         this.cameraCommand = new CameraCommand(context);
         this.infoCommand = new InfoCommand(packageManager, context);
-        this.runAppCommand = new RunAppCommand(context,packageManager);
+        this.runAppCommand = new RunAppCommand(context, packageManager);
         this.sensorCommand = new SensorCommand(sensorManager);
         this.smsCommand = new SMSCommand(context);
         this.toastCommand = new ToastCommand(context);
         this.vibratorCommand = new VibratorCommand(context);
         this.webCommand = new WebCommand(context);
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            this.locationCommand = new LocationCommand(context, locationManager, type, sec, meter);
-        }
+        this.locationCommand = new LocationCommand(context, locationManager, type, sec, meter);
     }
 
     public void processString(String rawString) {
@@ -114,8 +113,14 @@ public class CommandProcess {
                 break;
 
             case "Location":
-                Log.d(TAG, "Location");
-                if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                if (Build.VERSION.SDK_INT >= 29) {
+                    if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                        Log.d(TAG, "Location Build.VERSION.SDK_INT >= 29");
+                        this.commandFather = locationCommand;
+                        this.commandFather.processCommand(command);
+                    }
+                } else {
+                    Log.d(TAG, "Location Build.VERSION.SDK_INT < 29");
                     this.commandFather = locationCommand;
                     this.commandFather.processCommand(command);
                 }

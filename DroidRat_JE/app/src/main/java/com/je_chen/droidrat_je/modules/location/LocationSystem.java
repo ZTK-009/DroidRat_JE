@@ -5,13 +5,14 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
 public class LocationSystem implements LocationListener {
 
-    private LocationManager locationManager;
-    private String provider;
+    private final LocationManager locationManager;
+    private final String provider;
 
     private double altitude, latitude, longitude, speed;
 
@@ -19,19 +20,19 @@ public class LocationSystem implements LocationListener {
     private int sec, meter;
 
     @SuppressLint("MissingPermission")
-    public LocationSystem(LocationManager locationManager, String type, int sec, int meter) {
+    public LocationSystem(@NonNull LocationManager locationManager, String type, int sec, int meter) {
         this.locationManager = locationManager;
         this.type = type;
         this.sec = sec;
         this.meter = meter;
         provider = locationManager.getBestProvider(new Criteria(), true);
-        if(provider != null)
+        if (provider != null)
             locationManager.requestLocationUpdates(type, sec, meter, this);
     }
 
 
     @Override
-    public void onLocationChanged(@NonNull Location location) {
+    public void onLocationChanged(Location location) {
         altitude = location.getAltitude();
         latitude = location.getLatitude();
         longitude = location.getLongitude();
@@ -39,14 +40,29 @@ public class LocationSystem implements LocationListener {
     }
 
     @Override
+    public void onProviderEnabled(@NonNull String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(@NonNull String provider) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
     protected void finalize() throws Throwable {
         super.finalize();
-        if(provider != null)
+        if (provider != null)
             locationManager.removeUpdates(this);
     }
 
     @SuppressLint("MissingPermission")
-    public Location getLastKnownLocation(String type) {
+    public Location getLastKnownLocation(@NonNull String type) {
         switch (type) {
             case "gps":
                 return locationManager.getLastKnownLocation("gps");
@@ -56,7 +72,7 @@ public class LocationSystem implements LocationListener {
         return locationManager.getLastKnownLocation("gps");
     }
 
-    public boolean canUse(){
+    public boolean canUse() {
         return this.provider == null;
     }
 

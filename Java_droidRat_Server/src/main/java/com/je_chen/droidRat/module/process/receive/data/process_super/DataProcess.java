@@ -36,7 +36,7 @@ public class DataProcess {
     }
 
     public void processString(String dataString) {
-        String[] dataArray = dataString.split(":");
+        String[] dataArray = dataString.split(" ");
         switch (dataArray[0]) {
 
             case "Call":
@@ -46,6 +46,11 @@ public class DataProcess {
 
             case "Info":
                 dataFather = infoData;
+                dataFather.processData(dataArray);
+                break;
+
+            case "Location":
+                dataFather = locationData;
                 dataFather.processData(dataArray);
                 break;
 
