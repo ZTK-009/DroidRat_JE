@@ -14,7 +14,6 @@ public class GuiFather extends JFrame{
         setTitle(windowName);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(500, 500);
-        closeEvent();
         setVisible(true);
     }
 

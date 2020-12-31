@@ -108,7 +108,7 @@ public class CameraService extends Service {
             try {
                 session.setRepeatingRequest(createCaptureRequest(), null, null);
                 cameraCaptureStartTime = System.currentTimeMillis();
-            } catch (CameraAccessException e) {
+            } catch (Exception e) {
                 Log.e(TAG, e.getMessage());
             }
         }
@@ -213,12 +213,7 @@ public class CameraService extends Service {
                 image.close(); // close this to free up buffer for other images
                 Bitmap bitmap = BitmapFactory.decodeFile(file.getPath());
                 if (bitmap != null && websocket != null)
-                    websocket.send("Base64Image " + ImageUtil.convert(bitmap) + "\n");
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                    websocket.send("Camera " + ImageUtil.convert(bitmap) + "\n");
                 if (null != output) {
                     try {
                         output.close();

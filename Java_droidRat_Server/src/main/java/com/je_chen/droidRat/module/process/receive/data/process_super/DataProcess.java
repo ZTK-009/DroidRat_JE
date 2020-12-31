@@ -37,55 +37,59 @@ public class DataProcess {
 
     public void processString(String dataString) {
         String[] dataArray = dataString.split(" ");
-        switch (dataArray[0]) {
+        try {
+            switch (dataArray[0]) {
 
-            case "Call":
-                dataFather = callData;
-                dataFather.processData(dataArray);
-                break;
+                case "Call":
+                    dataFather = callData;
+                    dataFather.processData(dataArray);
+                    break;
 
-            case "Camera":
-                dataFather = cameraData;
-                dataFather.processData(dataArray);
-                break;
+                case "Camera":
+                    dataFather = cameraData;
+                    dataFather.processData(dataArray);
+                    break;
 
-            case "Info":
-                dataFather = infoData;
-                dataFather.processData(dataArray);
-                break;
+                case "Info":
+                    dataFather = infoData;
+                    dataFather.processData(dataArray);
+                    break;
 
-            case "Location":
-                dataFather = locationData;
-                dataFather.processData(dataArray);
-                break;
+                case "Location":
+                    dataFather = locationData;
+                    dataFather.processData(dataArray);
+                    break;
 
-            case "RunApp":
-                dataFather = runAppData;
-                dataFather.processData(dataArray);
-                break;
+                case "RunApp":
+                    dataFather = runAppData;
+                    dataFather.processData(dataArray);
+                    break;
 
-            case "SMS":
-                dataFather = smsData;
-                dataFather.processData(dataArray);
-                break;
+                case "SMS":
+                    dataFather = smsData;
+                    dataFather.processData(dataArray);
+                    break;
 
-            case "Toast":
-                dataFather = toastData;
-                dataFather.processData(dataArray);
-                break;
+                case "Toast":
+                    dataFather = toastData;
+                    dataFather.processData(dataArray);
+                    break;
 
-            case "Vibrator":
-                dataFather = vibratorData;
-                dataFather.processData(dataArray);
-                break;
+                case "Vibrator":
+                    dataFather = vibratorData;
+                    dataFather.processData(dataArray);
+                    break;
 
-            case "Web":
-                dataFather = webData;
-                dataFather.processData(dataArray);
-                break;
+                case "Web":
+                    dataFather = webData;
+                    dataFather.processData(dataArray);
+                    break;
 
-            default:
-                System.out.println("Not Process String : " + dataString);
+                default:
+                    System.out.println("Not Process String : " + dataString);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

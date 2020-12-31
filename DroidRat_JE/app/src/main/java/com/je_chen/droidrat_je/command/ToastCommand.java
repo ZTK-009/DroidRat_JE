@@ -34,9 +34,9 @@ public class ToastCommand extends CommandFather{
             switch (rawCommandArray[1]) {
                 case "ToastN":
                     String message = rawCommandArray[2];
-                    Log.d(TAG, "Toast ToastN:" + message);
+                    Log.d(TAG, "Toast ToastN " + message);
                     toastmaker.makeToast(message);
-                    this.send("Toast:ToastN:" + "->" + message);
+                    this.send("Toast ToastN " + "->" + message);
                     break;
 
                 case "ToastD":

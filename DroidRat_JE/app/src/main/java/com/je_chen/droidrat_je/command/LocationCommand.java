@@ -35,27 +35,27 @@ public class LocationCommand extends CommandFather {
                 case "Longitude":
                     double Longitude = locationSystem.getLastKnownLocation("gps").getLongitude();
                     Log.d(TAG,"Location Longitude");
-                    this.send("Location:Longitude: "  + Longitude);
+                    this.send("Location Longitude: "  + Longitude);
                     break;
                 case "Altitude":
                     double Altitude = locationSystem.getLastKnownLocation("gps").getAltitude();
                     Log.d(TAG,"Location Altitude");
-                    this.send("Location:Altitude: "  + Altitude);
+                    this.send("Location Altitude: "  + Altitude);
                     break;
                 case "Latitude":
                     double Latitude = locationSystem.getLastKnownLocation("gps").getLatitude();
                     Log.d(TAG,"Location Latitude");
-                    this.send("Location:Latitude: "  + Latitude);
+                    this.send("Location Latitude: "  + Latitude);
                     break;
                 case "Speed":
                     double Speed = locationSystem.getLastKnownLocation("gps").getSpeed();
                     Log.d(TAG,"Location Speed");
-                    this.send("Location:Speed: "  + Speed);
+                    this.send("Location Speed: "  + Speed);
                     break;
                 case "LocationGeo":
                     String LocationGeo = locationGeocode.getAddressLine(locationSystem.getLatitude(), locationSystem.getLongitude(), 5);
                     Log.d(TAG,"Location LocationGeo");
-                    this.send("Location:LocationGeo: "  + LocationGeo);
+                    this.send("Location LocationGeo: "  + LocationGeo);
                     break;
             }
         } catch (Exception e) {

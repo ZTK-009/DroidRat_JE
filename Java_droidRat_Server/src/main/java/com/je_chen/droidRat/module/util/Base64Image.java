@@ -29,13 +29,13 @@ public class Base64Image {
         BufferedImage imageBase64 = null;
         byte[] imageByte;
         try {
-            imageByte = Base64.getDecoder().decode(base64String);
+            imageByte = Base64.getMimeDecoder().decode(base64String);
             ByteArrayInputStream imageByteStream = new ByteArrayInputStream(imageByte);
             imageBase64 = ImageIO.read(imageByteStream);
             imageByteStream.close();
             if(save){
                 try {
-                    ImageIO.write(imageBase64, "png", new File("CameraImage"));
+                    ImageIO.write(imageBase64, "png", new File("CameraImage.png"));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

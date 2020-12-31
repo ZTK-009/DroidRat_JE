@@ -37,7 +37,7 @@ public class RunAppCommand extends CommandFather {
                     String packageName = rawCommandArray[2];
                     Log.d(TAG, "Run App :" + packageName);
                     runApp.launchApp(context, rawCommandArray[2]);
-                    this.send("RunApp:RunApp:->" + packageName);
+                    this.send("RunApp RunApp " + packageName);
                     break;
 
             }
