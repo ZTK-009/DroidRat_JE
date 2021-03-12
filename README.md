@@ -26,4 +26,7 @@
 #
 #### TODO:
 * GUI (All GUI)
+* UDP Socket
+* TCP Socket
+* Some Sensor not complete
 # 
