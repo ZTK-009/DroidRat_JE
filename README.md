@@ -33,5 +33,5 @@
 * GUI (All GUI)
 * UDP Socket
 * TCP Socket
-* Some Sensor not complete
+* Some sensor not complete
 # 
