@@ -19,6 +19,9 @@
 * java for android & java for server
 
 * MIT License
+
+* NKNU Student Project
+
 #
 #### Use note:
 * Need Android Studio & Android SDK to build apk or using exist apk
