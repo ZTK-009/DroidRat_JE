@@ -22,8 +22,8 @@
 #
 #### Use note:
 * Need Android Studio & Android SDK to build apk or using exist apk
-* connect using websocket & tcp socket & udp socket, default is websocket
+* connect using websocket
 #
 #### TODO:
-* GUI
-#
+* GUI (All GUI)
+# 
