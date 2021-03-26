@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\JE-Chen\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\JE-Chen\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_CSharp_droidRat_GUI_Server.25901121.00" t="ExcludeRecursive" />
-    <e p="D:\WorkSpaces\Program WorkSpace\Android\Android\Android Program\droidRat_JE\C#_DroidRat_GUI_Server\CSharp_droidRat_GUI_Server" t="IncludeRecursive">
+    <e p="C:\Users\JE-Chen\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_CSharp_droidRat_GUI_Server.-1311106759.00" t="ExcludeRecursive" />
+    <e p="D:\WorkSpaces\Program WorkSpace\Android\Android\Android Program\droidRat_JE\src\C#_DroidRat_GUI_Server\CSharp_droidRat_GUI_Server" t="IncludeRecursive">
       <e p="App.config" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="CSharp_droidRat_GUI_Server.csproj" t="IncludeRecursive" />
