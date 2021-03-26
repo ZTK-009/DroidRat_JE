@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\JE-Chen\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\JE-Chen\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_CSharp_droidRat_GUI_Server.25901121.00" t="ExcludeRecursive" />
+    <e p="D:\WorkSpaces\Program WorkSpace\Android\Android\Android Program\droidRat_JE\C#_DroidRat_GUI_Server\CSharp_droidRat_GUI_Server" t="IncludeRecursive">
+      <e p="App.config" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="CSharp_droidRat_GUI_Server.csproj" t="IncludeRecursive" />
+      <e p="CSharp_droidRat_GUI_Server.sln" t="IncludeFlat" />
+      <e p="Form" t="Include">
+        <e p="CallForm" t="Include">
+          <e p="CallForm.cs" t="Include" />
+          <e p="CallForm.Designer.cs" t="Include" />
+        </e>
+        <e p="CameraForm" t="Include">
+          <e p="CameraForm.cs" t="Include" />
+          <e p="CameraForm.Designer.cs" t="Include" />
+        </e>
+        <e p="InfoForm" t="Include">
+          <e p="InfoForm.cs" t="Include" />
+          <e p="InfoForm.Designer.cs" t="Include" />
+        </e>
+        <e p="LocationForm" t="Include">
+          <e p="LocationForm.cs" t="Include" />
+          <e p="LocationForm.Designer.cs" t="Include" />
+        </e>
+        <e p="MailForm" t="Include">
+          <e p="MailForm.cs" t="Include" />
+          <e p="MailForm.Designer.cs" t="Include" />
+        </e>
+        <e p="MainForm" t="Include">
+          <e p="MainForm.cs" t="Include" />
+          <e p="MainForm.Designer.cs" t="Include" />
+          <e p="MainForm.resx" t="Include" />
+        </e>
+        <e p="PlayForm" t="Include">
+          <e p="PlayForm.cs" t="Include" />
+          <e p="PlayForm.Designer.cs" t="Include" />
+        </e>
+        <e p="RunAppForm" t="Include">
+          <e p="RunAppForm.cs" t="Include" />
+          <e p="RunAppForm.Designer.cs" t="Include" />
+        </e>
+        <e p="SensorForm" t="Include">
+          <e p="SensorForm.cs" t="Include" />
+          <e p="SensorForm.Designer.cs" t="Include" />
+        </e>
+        <e p="SMSForm" t="Include">
+          <e p="SMSForm.cs" t="Include" />
+          <e p="SMSForm.Designer.cs" t="Include" />
+        </e>
+        <e p="ToastForm" t="Include">
+          <e p="ToastForm.cs" t="Include" />
+          <e p="ToastForm.Designer.cs" t="Include" />
+        </e>
+        <e p="VibratorForm" t="Include">
+          <e p="VibratorForm.cs" t="Include" />
+          <e p="VibratorForm.Designer.cs" t="Include" />
+        </e>
+        <e p="WebForm" t="Include">
+          <e p="WebForm.cs" t="Include" />
+          <e p="WebForm.Designer.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Module" t="Include">
+        <e p="ProcessData" t="Include">
+          <e p="CallData.cs" t="Include" />
+          <e p="CameraData.cs" t="Include" />
+          <e p="InfoData.cs" t="Include" />
+          <e p="InstallData.cs" t="Include" />
+          <e p="LocationData.cs" t="Include" />
+          <e p="MailData.cs" t="Include" />
+          <e p="PlayData.cs" t="Include" />
+          <e p="process_super" t="Include">
+            <e p="DataFather.cs" t="Include" />
+            <e p="DataProcess.cs" t="Include" />
+          </e>
+          <e p="RunAppData.cs" t="Include" />
+          <e p="SensorData.cs" t="Include" />
+          <e p="SMSData.cs" t="Include" />
+          <e p="ToastData.cs" t="Include" />
+          <e p="VibratorData.cs" t="Include" />
+          <e p="WebData.cs" t="Include" />
+        </e>
+        <e p="webSocket" t="Include">
+          <e p="WebSocketMessageService.cs" t="Include" />
+          <e p="WebSocketServer.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="AssemblyInfo.cs" t="Include" />
+        <e p="Resources.Designer.cs" t="Include" />
+        <e p="Resources.resx" t="Include" />
+        <e p="Settings.Designer.cs" t="Include" />
+        <e p="Settings.settings" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

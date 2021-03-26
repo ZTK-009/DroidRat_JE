@@ -5,10 +5,11 @@
 ██║  ██║██╔══██╗██║   ██║██║██║  ██║██╔══██╗██╔══██║   ██║           ██   ██║██╔══╝
 ██████╔╝██║  ██║╚██████╔╝██║██████╔╝██║  ██║██║  ██║   ██║  ███████╗╚█████╔╝███████╗
 ```
-#
+
 #### Features
 
-#
+
+
 #### Note:
 
 * RAT (Remote Administration Tool)
@@ -21,14 +22,15 @@
 
 * NKNU Student Project
 
-#
+
 #### Use note:
 * Need Android Studio & Android SDK to build apk or using exist apk
 * connect using websocket
-#
+
 #### TODO:
+* Doc
 * GUI (All GUI)
 * UDP Socket
 * TCP Socket
 * Some sensor not complete
-# 
+

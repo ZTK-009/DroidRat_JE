@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{313644E1-799A-4C09-9D8E-5F158ABFC867}</ProjectGuid>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>CSharp_droidRat_GUI_Server</RootNamespace>
+        <AssemblyName>CSharp_droidRat_GUI_Server</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <Deterministic>true</Deterministic>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Xml.Linq" />
+        <Reference Include="System.Data.DataSetExtensions" />
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Deployment" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Net.Http" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+        <Reference Include="websocket-sharp, Version=1.0.2.59611, Culture=neutral, PublicKeyToken=5660b08a1845a91e">
+          <HintPath>packages\WebSocketSharp.1.0.3-rc11\lib\websocket-sharp.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Form\CallForm\CallForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\CallForm\CallForm.Designer.cs">
+          <DependentUpon>CallForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\CameraForm\CameraForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\CameraForm\CameraForm.Designer.cs">
+          <DependentUpon>CameraForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\InfoForm\InfoForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\InfoForm\InfoForm.Designer.cs">
+          <DependentUpon>InfoForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\LocationForm\LocationForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\LocationForm\LocationForm.Designer.cs">
+          <DependentUpon>LocationForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\MailForm\MailForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\MailForm\MailForm.Designer.cs">
+          <DependentUpon>MailForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\MainForm\MainForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\MainForm\MainForm.Designer.cs">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\PlayForm\PlayForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\PlayForm\PlayForm.Designer.cs">
+          <DependentUpon>PlayForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\RunAppForm\RunAppForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\RunAppForm\RunAppForm.Designer.cs">
+          <DependentUpon>RunAppForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\SensorForm\SensorForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\SensorForm\SensorForm.Designer.cs">
+          <DependentUpon>SensorForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\SMSForm\SMSForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\SMSForm\SMSForm.Designer.cs">
+          <DependentUpon>SMSForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\ToastForm\ToastForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\ToastForm\ToastForm.Designer.cs">
+          <DependentUpon>ToastForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\VibratorForm\VibratorForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\VibratorForm\VibratorForm.Designer.cs">
+          <DependentUpon>VibratorForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Form\WebForm\WebForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Form\WebForm\WebForm.Designer.cs">
+          <DependentUpon>WebForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Module\ProcessData\CallData.cs" />
+        <Compile Include="Module\ProcessData\CameraData.cs" />
+        <Compile Include="Module\ProcessData\InfoData.cs" />
+        <Compile Include="Module\ProcessData\InstallData.cs" />
+        <Compile Include="Module\ProcessData\LocationData.cs" />
+        <Compile Include="Module\ProcessData\MailData.cs" />
+        <Compile Include="Module\ProcessData\PlayData.cs" />
+        <Compile Include="Module\ProcessData\process_super\DataFather.cs" />
+        <Compile Include="Module\ProcessData\process_super\DataProcess.cs" />
+        <Compile Include="Module\ProcessData\RunAppData.cs" />
+        <Compile Include="Module\ProcessData\SensorData.cs" />
+        <Compile Include="Module\ProcessData\SMSData.cs" />
+        <Compile Include="Module\ProcessData\ToastData.cs" />
+        <Compile Include="Module\ProcessData\VibratorData.cs" />
+        <Compile Include="Module\ProcessData\WebData.cs" />
+        <Compile Include="Module\webSocket\WebSocketMessageService.cs" />
+        <Compile Include="Module\webSocket\WebSocketServer.cs" />
+        <Compile Include="Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <EmbeddedResource Include="Form\MainForm\MainForm.resx">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Properties\Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+            <SubType>Designer</SubType>
+        </EmbeddedResource>
+        <Compile Include="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+        <None Include="packages.config" />
+        <None Include="Properties\Settings.settings">
+            <Generator>SettingsSingleFileGenerator</Generator>
+            <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+        </None>
+        <Compile Include="Properties\Settings.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Settings.settings</DependentUpon>
+            <DesignTimeSharedInput>True</DesignTimeSharedInput>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="App.config" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
